@@ -1,0 +1,1238 @@
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>EzFleets | Easy Fleets Management System</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="_token" content="eyJpdiI6ImM4XC9DZUpBRExrNFRjXC92NGlUMDJ6UT09IiwidmFsdWUiOiJqTE83UlNGeU5IQ2d4UWlOYmRyVVwvcFh0ekFzVm1YXC9wdlZuZWJOMEN0N2tZeEFHRExTY0hKSTU3UG1ZSXNhMUE2XC9mcGl1WUJsWkEwRXRhMlRTMFhqUT09IiwibWFjIjoiZGU4NzAyYjkyZDMzZjg1MTFjYjEwOTY3OTNhYTM1ZjcyNTgxOWYxNzYxN2RhMjNkNjI5MTRhZmJiOGQ2ZTYzYiJ9" />
+	<!-- Favicons -->
+    <link rel="shortcut icon" href="http://tms.test/favicon.png">
+    <link rel="apple-touch-icon" href="http://tms.test/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.2.0/dropzone.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-datetimepicker/2.7.1/css/bootstrap-material-datetimepicker.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/1.5.3/jquery-confirm.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.5.10/css/ripples.min.css"/>
+
+     <link rel="stylesheet" href="/backend/css/tokenize2.min.css"/>
+	
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/backend/css/cloud-admin.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/backend/css/cloud-admin.min.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/backend/css/jquery.dataTables.min.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/backend/css/datatables.min.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/backend/js/tabletools/dataTables.tableTools.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/backend/css/themes/default.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/backend/css/elements.css">
+
+	<!-- 
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/frontend/css/chat-layout.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/frontend/css/bootstrap-editable.css">
+
+	-->
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/backend/css/responsive.css">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/backend/js/select2/select2.min.css">
+
+	<script src="http://tms.test/backend/js/jquery/jquery-2.0.3.min.js"></script>
+
+	<!--<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>-->
+
+	<!-- FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Hind+Madurai:300,400,500,600,700" rel="stylesheet"> 
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link media="all" type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+
+	<link media="all" type="text/css" rel="stylesheet" href="http://tms.test/backend/font-awesome/css/font-awesome.min.css">
+
+	<style type="text/css">
+		#balance {
+			color: #FFF;
+			font-size: 20px;
+			cursor: pointer;
+			padding: 10px;
+		}
+
+		.modal-footer .btn{
+			display: inline-block !important;
+		}
+
+		.login-box {
+		    color: #fff;
+		    border-radius: 7px 7px 7px 7px;
+		    margin: 0px auto;
+		    padding: 0px 40px;
+		    position: relative;
+		    min-height: 300px;
+		}
+
+		.bigintro {
+		    font-size: 30px;
+		    color: #000;
+		    line-height: 50px;
+		    text-align: center;
+		}
+
+		.menu-active {
+		    background-color: #4b739a;
+		    font-size: 14px;
+		}
+
+		.menu-active a {
+			color: #fff;
+		}
+
+		.app-search {
+		  position: relative;
+		}
+		.app-search a {
+		  position: absolute;
+		  top: 7px;
+		  right: 26px;
+		  color: rgba(152, 166, 173, 0.7);
+		}
+		.app-search a:hover {
+		  color: #fff;
+		}
+		.app-search .form-control,
+		.app-search .form-control:focus {
+		  border: 1px solid rgba(152, 166, 173, 0.15);
+		  font-size: 13px;
+		  height: 34px;
+		  color: #313a46;
+		  padding: 7px 40px 7px 20px;
+		  margin: 19px 12px 0 5px;
+		  background: rgba(152, 166, 173, 0.1);
+		  box-shadow: none;
+		  border-radius: 30px;
+		  width: 190px;
+		}
+
+		@media  print {
+		    .no-print, .no-print *{
+		        display: none !important;
+		    }
+
+		    header{
+		      display:none !important;
+		    }
+
+		    #sidebar{
+		      display: none !important;
+		    }
+
+		    .page-header{
+		      display: none !important;
+		    }
+
+		    .form-group{
+		      display: none !important;
+		    }
+
+		    .box-title{
+		      display: none !important;
+		    }
+
+		    #main-content{
+		      margin-left:0 !important;
+		    }
+
+		    .box.border{
+		      border:none !important;
+		    }
+		}
+	</style>
+	</head>
+<body>
+	<!-- HEADER -->
+		<header class="navbar-fixed-top clearfix" >
+		<div class="container">
+				
+					
+		</div>
+	</header>
+
+	<nav class="navbar nav navbar-fixed-top clearfix" id="header"> 
+	  	<div class="container-fluid">
+		    <div class="navbar-header">
+		      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                        
+		      	</button>
+				
+				<div class="navbar-brand" id="navbar_brand">
+					
+					<!-- COMPANY LOGO -->
+					<a href="http://tms.test">
+						<!-- 						<img src="http://ezfleets.test/backend/designs/logo/logocl(1).png" alt="Ez Fleets" class="img-responsive" height="90" width="230"> -->
+							<img src="/backend/images/logo.png" class="img-responsive" height="90" width="230">
+
+
+					</a>
+					<!-- /COMPANY LOGO -->
+					<!-- TEAM STATUS FOR MOBILE -->
+					<div class="visible-xs">
+						<a href="#" class="team-status-toggle switcher btn dropdown-toggle">
+							<i class="fa fa-users"></i>
+						</a>
+					</div>
+					<!-- /TEAM STATUS FOR MOBILE -->
+					<!-- SIDEBAR COLLAPSE -->
+					<div class="sidebar-collapse btn">
+						<i class="fa fa-bars" 
+							data-icon1="fa fa-bars" 
+							data-icon2="fa fa-bars" ></i>
+					</div>
+					<!-- /SIDEBAR COLLAPSE -->
+				</div>
+		    </div>
+
+		    <div class="collapse navbar-collapse" id="myNavbar">
+					
+		     	<ul class="nav navbar-nav pull-right">
+					
+																
+
+						<li class=""  style="display:none;"  >
+																							<a href="http://tms.test/workflow/index">
+																<div class="menu_icon workflow"></div><span>Business process</span>
+								</a>
+													</li>
+											
+
+						<li class="" >
+																							<a href="http://tms.test/admin/tms/pod">
+																<div class="menu_icon pod"></div><span>POD</span>
+								</a>
+													</li>
+											
+
+						<li class="dropdown" >
+															<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+																<div class="menu_icon users"></div><span>Users</span>
+								</a>
+															<ul class="dropdown-menu">
+																			
+																					<li><li ><a href="http://tms.test/users" target="_self"><i class="fa fa-user"></i> View Users</a></li></li>
+																													
+																					<li><li ><a href="http://tms.test/users/groups" target="_self"><i class="fa fa-users"></i> User Groups</a></li></li>
+																											</ul>
+													</li>
+											
+
+						<li class="dropdown" >
+															<a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown">
+																<div class="menu_icon masters"></div><span>TMS Masters</span>
+								</a>
+															<ul class="dropdown-menu">
+																			
+					<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved.">
+  <assemblyIdentity name="dual_wstorvsp.inf" version="10.0.17763.194" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" type="dualModeDriver" versionScope="nonSxS" />
+  <dependency discoverable="no" resourceType="Resources">
+    <dependentAssembly dependencyType="prerequisite">
+      <assemblyIdentity name="wstorvsp.inf.Resources" version="10.0.17763.194" processorArchitecture="amd64" language="*" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+    </dependentAssembly>
+  </dependency>
+  <file name="wstorvsp.inf" sourceName="wstorvsp.inf" importPath="$(build.nttree)\driver_infs\">
+    <infFile xmlns="urn:schemas-microsoft-com:asm.v3" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2">
+      <dsig:Transforms xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">p+m52XT3fVFlW1TqNGjVzuzXReCx/o9xSF2el7aTiXw=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="storvsp.sys" destinationPath="$(runtime.drivers)\" sourceName="storvsp.sys" importPath="$(build.nttree)\">
+    <securityDescriptor name="9C421A581BE5361C829A50F43BC517A0A0AACA9A" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2">
+      <dsig:Transforms xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">85sUrJmPPtUjja56k5YsKkflfs6bJFvz1q1mDx3vMeg=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <registryKeys>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\ROOT\storvsp\0000">
+      <registryValue name="ConfigFlags" valueType="REG_DWORD" value="0x00000020" />
+      <registryValue name="HardwareID" valueType="REG_MULTI_SZ" value="&quot;root\storvsp&quot;" />
+      <securityDescriptor name="62791918C58049A69FA4D51EF72F68381DD90E4C" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\ROOT\storvsp\0000\Properties\{83da6326-97a6-4088-9453-a1923f573b29}\0010">
+      <registryValue name="" valueType="FFFF2012" value="7700730074006F0072007600730070002E0069006E00660000000000" />
+      <securityDescriptor name="D3E777F477493A7F59D46A8E16DED6BB13EF3EEF" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\storvsp">
+      <registryValue name="ErrorControl" valueType="REG_DWORD" value="0x00000001" />
+      <registryValue name="Group" valueType="REG_SZ" value="Extended Base" />
+      <registryValue name="ImagePath" valueType="REG_EXPAND_SZ" value="\SystemRoot\System32\drivers\storvsp.sys" />
+      <registryValue name="Owners" valueType="REG_MULTI_SZ" value="&quot;wstorvsp.inf&quot;" />
+      <registryValue name="Start" valueType="REG_DWORD" value="0x00000003" />
+      <registryValue name="Type" valueType="REG_DWORD" value="0x00000001" />
+      <securityDescriptor name="62791918C58049A69FA4D51EF72F68381DD90E4C" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\DriverDatabase\DeviceIds\root\storvsp">
+      <registryValue name="wstorvsp.inf" valueType="REG_BINARY" value="01FF0000" />
+      <securityDescriptor name="62791918C58049A69FA4D51EF72F68381DD90E4C" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\DriverDatabase\DeviceIds\{4d36e97d-e325-11ce-bfc1-08002be10318}">
+      <registryValue name="wstorvsp.inf" valueType="REG_NONE" value="" />
+      <securityDescriptor name="62791918C58049A69FA4D51EF72F68381DD90E4C" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\DriverDatabase\DriverInfFiles\wstorvsp.inf">
+      <registryValue name="" valueType="REG_MULTI_SZ" value="&quot;wstorvsp.inf_amd64_ab6338593db5d1a6&quot;" />
+      <registryValue name="Active" valueType="REG_SZ" value="wstorvsp.inf_amd64_ab6338593db5d1a6" />
+      <registryValue name="Configurations" valueType="REG_MULTI_SZ" value="&quot;Storage_VSP.NT&quot;" />
+      <securityDescriptor name="62791918C58049A69FA4D51EF72F68381DD90E4C" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\DriverDatabase\DriverPackages\wstorvsp.inf_amd64_ab6338593db5d1a6">
+      <registryValue name="" valueType="REG_SZ" value="wstorvsp.inf" />
+      <registryValue name="Provider" valueType="REG_SZ" value="Microsoft" />
+      <registryValue name="SignerScore" valueType="REG_DWORD" value="0x0d000003" />
+      <registryValue name="StatusFlags" valueType="REG_DWORD" value="0x00000012" />
+      <registryValue name="Version" valueType="REG_BINARY" value="FFFF0900000000007DE9364D25E3CE11BFC108002BE1031800808CA3C594C601C200634500000A000000000000000000" />
+      <securityDescriptor name="62791918C58049A69FA4D51EF72F68381DD90E4C" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\DriverDatabase\DriverPackages\wstorvsp.inf_amd64_ab6338593db5d1a6\Configurations\Storage_VSP.NT">
+      <registryValue name="ConfigFlags" valueType="REG_DWORD" value="0x00000000" />
+      <registryValue name="ConfigScope" valueType="REG_DWORD" value="0x00000007" />
+      <registryValue name="Service" valueType="REG_SZ" value="storvsp" />
+      <securityDescriptor name="62791918C58049A69FA4D51EF72F68381DD90E4C" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\DriverDatabase\DriverPackages\wstorvsp.inf_amd64_ab6338593db5d1a6\Configurations\Storage_VSP.NT\Device">
+      <registryValue name="FcVportRescanInterval" valueType="REG_DWORD" value="0x00000005" />
+      <securityDescriptor name="62791918C58049A69FA4D51EF72F68381DD90E4C" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\DriverDatabase\DriverPackages\wstorvsp.inf_amd64_ab6338593db5d1a6\Descriptors\root\storvsp">
+      <registryValue name="Configuration" valueType="REG_SZ" value="Storage_VSP.NT" />
+      <registryValue name="Description" valueType="REG_SZ" value="%storagevsp.devicedesc%" />
+      <registryValue name="Manufacturer" valueType="REG_SZ" value="%stdmfg%" />
+      <securityDescriptor name="62791918C58049A69FA4D51EF72F68381DD90E4C" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\DriverDatabase\DriverPackages\wstorvsp.inf_amd64_ab6338593db5d1a6\Strings">
+      <registryValue name="stdmfg" valueType="REG_SZ" value="Microsoft" />
+      <registryValue name="storagevsp.devicedesc" valueType="REG_SZ" value="Microsoft Hyper-V Virtual Disk Server" />
+      <securityDescriptor name="62791918C58049A69FA4D51EF72F68381DD90E4C" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SYSTEM\Setup\ResolveFilePaths">
+      <registryValue name="CurrentControlSet\Services\storvsp" valueType="REG_MULTI_SZ" value="&quot;ImagePath&quot;" />
+      <securityDescriptor name="162935E76A6854A0B638D7013C0461D85A0C3773" />
+    </registryKey>
+    <registryKey keyName="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Setup\PnpLockdownFiles\%SystemRoot%/System32/drivers/storvsp.sys">
+      <registryValue name="Class" valueType="REG_DWORD" value="0x00000001" />
+      <registryValue name="Owners" valueType="REG_MULTI_SZ" value="&quot;wstorvsp.inf&quot;" />
+      <registryValue name="Source" valueType="REG_EXPAND_SZ" value="%SystemRoot%\System32\DriverStore\FileRepository\wstorvsp.inf_amd64_ab6338593db5d1a6\storvsp.sys" />
+      <securityDescriptor name="F132C7A837A978AC6DC23C4CA555BD69C8DC06D7" />
+    </registryKey>
+  </registryKeys>
+  <trustInfo>
+    <security>
+      <accessControl>
+        <securityDescriptorDefinitions>
+          <securityDescriptorDefinition name="162935E76A6854A0B638D7013C0461D85A0C3773" sddl="D:(A;OICI;KR;;;RC)(A;OICI;KA;;;SY)(A;OICI;KA;;;BA)" operationHint="replace" />
+          <securityDescriptorDefinition name="62791918C58049A69FA4D51EF72F68381DD90E4C" sddl="(inherit)" operationHint="replace" />
+          <securityDescriptorDefinition name="9C421A581BE5361C829A50F43BC517A0A0AACA9A" sddl="D:(A;;FA;;;SY)(A;;0x1200a9;;;BU)(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;0x1200a9;;;AC)(A;;0x1200a9;;;S-1-15-2-2)" operationHint="replace" />
+          <securityDescriptorDefinition name="D3E777F477493A7F59D46A8E16DED6BB13EF3EEF" sddl="D:(A;CI;KA;;;SY)" operationHint="replace" />
+          <securityDescriptorDefinition name="F132C7A837A978AC6DC23C4CA555BD69C8DC06D7" sddl="D:(A;CI;KA;;;SY)(A;CI;CCSWRPWPRC;;;BA)(A;CI;KR;;;S-1-5-80-242729624-280608522-2219052887-3187409060-2225943459)" operationHint="replace" />
+        </securityDescriptorDefinitions>
+      </accessControl>
+    </security>
+  </trustInfo>
+  <deconstructionTool xmlns="urn:schemas-microsoft-com:asm.v3" version="10.0.0.0" />
+  <deployment xmlns="urn:schemas-microsoft-com:asm.v3" />
+</assembly>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ï»¿<?xml version="1.0" encoding="utf-8"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0">
+  <assemblyIdentity name="841cf9b77bf62d195c8a550c588d6002" version="10.0.17763.404" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+  <deployment />
+  <dependency discoverable="false">
+    <dependentAssembly dependencyType="install">
+      <assemblyIdentity name="Microsoft-Windows-DrvStore" version="10.0.17763.404" processorArchitecture="wow64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+    </dependentAssembly>
+  </dependency>
+</assembly>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          k‡ÿÿÚ      (       ÀD 
+*ÌÔ            P      0£)             ¨n‡ÿÿk      (       ÀD 
+šÕ            À      «)             k‡ÿÿ`ß      (       ÀD 
+Ø¢Õ            €      Ğ«)             ¨n‡ÿÿËÕ      (       ÀD 
+-®Õ            P      ¬)             k‡ÿÿç      (       ÀD 
+mÈÕ            à      p­)             ¨n‡ÿÿ“$      (       ÀD 
+´Ö            p      ²)             k‡ÿÿ¥o      (       ÀD 
+©éÖ            ğ      @º)             ¨n‡ÿÿ      (       ÀD 
+øÖ            Ğ      0»)             k‡ÿÿïØ      (       ÀD 
+[×            €       ¼)             ¨n‡ÿÿo      (       ÀD 
+ß×                  à¼)             k‡ÿÿ"      (       ÀD 
+ı×                   à½)             ¨n‡ÿÿ¢      (       ÀD 
+="×                  0¾)             k‡ÿÿø      (       ÀD 
+î@×                  à¾)             ¨n‡ÿÿ\"      (       ÀD 
+jG×                    À)             k‡ÿÿÜ$      (       ÀD 
+ L×            0      `À)             ¨n‡ÿÿi
+      (       ÀD 
+]×            P      Ã)             k‡ÿÿ“9      (       ÀD 
+J›×            €      @Ä)             ¨n‡ÿÿÒM      (       ÀD 
+r>Ø            `      pÊ)             k‡ÿÿ2¼      (       ÀD 
+ÃVØ                   Ë)             ¨n‡ÿÿwº      (       ÀD 
+&`Ø                   Ì)             k‡ÿÿÆ       (       ÀD 
+Æ‚Ø            €       Î)             ¨n‡ÿÿŸ*      (       ÀD 
+Å”Ø            ğ      Î)             k‡ÿÿ“3      (       ÀD 
+İ§Ø                  €Ï)             ¨n‡ÿÿ$      (       ÀD 
+ªØ            0      €Ğ)             k‡ÿÿø      (       ÀD 
+Ù¶Ø            `      ğĞ)             ¨n‡ÿÿ¯      (       ÀD 
+EoÙ                  €×)             k‡ÿÿœÄ      (       ÀD 
+lÙ            à      €Ø)             ¨n‡ÿÿ¤Ç      (       ÀD 
+TÙ            À      `Ù)             k‡ÿÿº      (       ÀD 
+ùÿÙ                  Pß)             ¨n‡ÿÿN      (       ÀD 
+^#Ú            Ğ      pá)             k‡ÿÿİ”      (       ÀD 
+§Ú                  Pè)             ¨n‡ÿÿÍ¥      (       ÀD 
+êÚ            à      Pé)             k‡ÿÿ‡Å      (       ÀD 
+ZúÚ            À      Pê)             ¨n‡ÿÿ¸Q      (       ÀD 
+FşÚ                    ë)             k‡ÿÿİ      (       ÀD 
+´Û                  Ğë)             ¨n‡ÿÿ      (       ÀD 
+$Û                  Ğì)             k‡ÿÿg%      (       ÀD 
+C8Û            ğ      €í)             ¨n‡ÿÿ      (       ÀD 
+TKÛ                  pî)             k‡ÿÿ&      (       ÀD 
+;\Û            ğ      pï)             ¨n‡ÿÿq"      (       ÀD 
+¨mÛ            ğ      `ğ)             k‡ÿÿ÷       (       ÀD 
+»tÛ            `      Pñ)             ¨n‡ÿÿ6      (       ÀD 
+À„Û            p       ò)             k‡ÿÿÌ      (       ÀD 
+gšÛ                  °ò)             ¨n‡ÿÿ5%      (       ÀD 
+pŸÛ            P      °ó)             k‡ÿÿ¶      (       ÀD 
+±Û            ğ       ô)             ¨n‡ÿÿI      (       ÀD 
+t·Û                  @õ)             k‡ÿÿM      (       ÀD 
+½ºÛ                  `õ)             ¨n‡ÿÿr      (       ÀD 
+åÜ            °       ú)             k‡ÿÿf      (       ÀD 
+e¸Ü                  `ÿ)             ¨n‡ÿÿMı      (       ÀD 
+×ÊÜ                  ` *             k‡ÿÿÎ«      (       ÀD 
+¸İÜ                  `*             ¨n‡ÿÿ$      (       ÀD 
+iñÜ            `      *             k‡ÿÿ=%      (       ÀD 
+èûÜ            p       *             ¨n‡ÿÿÜ      (       ÀD 
+¼İ            Ğ      ğ*             k‡ÿÿa)      (       ÀD 
+œ-İ            À      ğ*             ¨n‡ÿÿ·0      (       ÀD 
+7İ                  °*             k‡ÿÿ      (       ÀD 
+0Ş                  à*             ¨n‡ÿÿf     (       ÀD 
+2Ş                  à*             k‡ÿÿú      (       ÀD 
+ÜsŞ            ğ       *             ¨n‡ÿÿ|B      (       ÀD 
+8‡Ş                  *             k‡ÿÿ’T      (       ÀD 
+S“Ş            °      *             ¨n‡ÿÿ=      (       ÀD 
+!ØŞ                  Ğ*             k‡ÿÿ™O      (       ÀD 
+qéŞ                  à*             ¨n‡ÿÿçT      (       ÀD 
+õûŞ                  à*             k‡ÿÿ#      (       ÀD 
+Çß            ğ      à*             ¨n‡ÿÿî!      (       ÀD 
+Şnß                  P*             k‡ÿÿmq      (       ÀD 
+åsß            P      P *             ¨n‡ÿÿÚe      (       ÀD 
+÷áß                   ğ%*             k‡ÿÿÁq      (       ÀD 
+ ^à            à      `,*             ¨n‡ÿÿ§é      (       ÀD 
+jà                  P-*             k‡ÿÿÃ†      (       ÀD 
+:á            p      ÀD*             ¨n‡ÿÿ±Ú      (       ÀD 
+ÏÍá            ğ       [*             k‡ÿÿc     (       ÀD 
+Õàá                  ğ[*             ¨n‡ÿÿ¤¥      (       ÀD 
+^ğá            À      ğ\*             k‡ÿÿ:!      (       ÀD 
+¹â            à      à]*             ¨n‡ÿÿ‹       (       ÀD 
+uâ            €      À^*             k‡ÿÿæ      (       ÀD 
+tQâ                  p€*             ¨n‡ÿÿ{M      (       ÀD 
+Š®â            Ğ      Ğ„*             k‡ÿÿ
+¢      (       ÀD 
+à¿â            ğ       …*             ¨n‡ÿÿ§m      (       ÀD 
+$ã                  †*             k‡ÿÿ_W      (       ÀD 
+ß	ã            @      ‡*             ¨n‡ÿÿ¡H      (       ÀD 
+»,ã            ğ      Àˆ*             k‡ÿÿ"$      (       ÀD 
+h;ã            À      °‰*             ¨n‡ÿÿÏ0      (       ÀD 
+ìMã                  pŠ*             k‡ÿÿÍ      (       ÀD 
+Zã            °      p‹*             ¨n‡ÿÿv      (       ÀD 
+mã                   Œ*             k‡ÿÿ½      (       ÀD 
+Êuã            €       *             ¨n‡ÿÿx      (       ÀD 
+'yã                  À*             k‡ÿÿ¥
+      (       ÀD 
+2Ïä            ğ      `«*             ¨n‡ÿÿcX     (       ÀD 
+Dâä                  P¬*             k‡ÿÿÄh     (       ÀD 
+æüä                  À­*             ¨n‡ÿÿc,      (       ÀD 
+Ôå            ğ      À®*             k‡ÿÿ7*      (       ÀD 
+Så            P      °¯*             ¨n‡ÿÿ      (       ÀD 
+æ6å            à       ±*             k‡ÿÿÅ'      (       ÀD 
+ñIå            ğ       ²*             ¨n‡ÿÿ,6      (       ÀD 
+Lå                   ğ²*             k‡ÿÿò      (       ÀD 
+’\å            P       ³*             ¨n‡ÿÿY      (       ÀD 
+°hå            `      0´*             k‡ÿÿ      (       À( ô      Èµå           @§W‡ÿÿ Àx ô      íµå           @§W‡ÿÿ   .   .       £N     Áò     ³       .ï     .ï     my                     À( ô      ÿµå           @§W‡ÿÿ ÀD 
+éäå                  @º*             ¨n‡ÿÿk‡      (       ÀD 
+ëëå            p      @»*             k‡ÿÿS‚      (       ÀD 
+q2æ                  °»*             ¨n‡ÿÿ0L      (       ÀD 
+9æ            `      °¼*             k‡ÿÿ®L      (       ÀD 
+&\æ            À      0¾*             ¨n‡ÿÿi(      (       ÀD 
+_hæ                   ğ¾*             k‡ÿÿV.      (       ÀD 
+„„æ                   À*             ¨n‡ÿÿ'      (       ÀD 
+“æ            Ğ       Á*             k‡ÿÿ‰)      (       ÀD 
+u¤æ            ğ      ğÁ*             ¨n‡ÿÿ„      (       ÀD 
+®¦æ                   àÂ*             k‡ÿÿT      (       ÀD 
+nºæ            p       Ã*             ¨n‡ÿÿ      (       ÀD 
+İ)ç            ğ       É*             k‡ÿÿ‹‚      (       ÀD 
+y1ç            p      Ê*             ¨n‡ÿÿv      (       ÀD 
+áFç                  Ë*             k‡ÿÿ•      (       ÀD 
+u]ç                  ĞË*             ¨n‡ÿÿû*      (       ÀD 
+Ê¢ç                  ĞÌ*             k‡ÿÿÖZ      (       ÀD 
+¥³ç            ğ      ĞÍ*             ¨n‡ÿÿØT      (       ÀD 
+«Æç                  ÀÎ*             k‡ÿÿ"      (       ÀD 
+ËÈç                  ÀÏ*             ¨n‡ÿÿã      (       ÀD 
+ÙÌç            @      ĞÏ*             k‡ÿÿÈ      (       ÀD 
+ÌÎç                  0Ğ*             ¨n‡ÿÿ|      (       ÀD 
+Üç                  `Ğ*             k‡ÿÿÊ      (       ÀD 
+5è            €       Ò*             ¨n‡ÿÿ6      (       ÀD 
+ßè            Ğ      Ó*             k‡ÿÿÁ>      (       ÀD 
+zŸè            À      °Ú*             ¨n‡ÿÿ@™      (       ÀD 
+”¬è                    Ü*             k‡ÿÿ„      (       ÀD 
+€Êè            ğ      ĞÜ*             ¨n‡ÿÿÛ)      (       ÀD 
+šŞè            ğ      ğİ*             k‡ÿÿ:1      (       ÀD 
+I é            Ğ      àŞ*             ¨n‡ÿÿ„T      (       ÀD 
+i"é                  Àß*             k‡ÿÿB      (       ÀD 
+/é            €      ğß*             ¨n‡ÿÿm      (       ÀD 
+ó0é                  €à*             k‡ÿÿù      (       ÀD 
+&Bé            Ğ      °à*             ¨n‡ÿÿó      (       ÀD 
+vKé            €      €á*             k‡ÿÿñ      (       ÀD 
+ÄZé                   0â*             ¨n‡ÿÿT      (       ÀD 
+Ãoé                  ğâ*             k‡ÿÿ:#      (       ÀD 
+üqé                   ğã*             ¨n‡ÿÿ      (       ÀD 
+xé            P       ä*             k‡ÿÿÇ      (       ÀD 
+¢é            °      ğä*             ¨n‡ÿÿ      (       ÀD 
+Õ«é            Ğ      `æ*             k‡ÿÿØ2      (       ÀD 
+Äé            ğ      ç*             ¨n‡ÿÿA3      (       ÀD 
+ÓÉé            P      €è*             k‡ÿÿ³      (       ÀD 
+AÏé                  é*             ¨n‡ÿÿì	      (       ÀD 
+ÏMê            P      à5,             k‡ÿÿƒ      (       ÀD 
+¢ëê            P      àa,             ¨n‡ÿÿ¬     (       ÀD 
+üë                  Pc,             k‡ÿÿJ¿      (       ÀD 
+ë            Ğ      Pd,             ¨n‡ÿÿ”.      (       ÀD 
+Ñ—ë                   +-             k‡ÿÿ„ˆ      (       ÀD 
+°ªë                   ,-             ¨n‡ÿÿ]      (       ÀD 
+è·ë                   --             k‡ÿÿÁ      (       ÀD 
+Èë                   .-             ¨n‡ÿÿ      (       ÀD 
+ŠÜë                   /-             k‡ÿÿS#      (       ÀD 
+,èë                   0-             ¨n‡ÿÿÑ      (       ÀD 
+7øë                   1-             k‡ÿÿ      (       ÀD 
+iì            À       2-             ¨n‡ÿÿí      (       ÀD 
+bì                   3-             k‡ÿÿ¼      (       ÀD 
+÷&ì            ğ       4-             ¨n‡ÿÿQ!      (       ÀD 
+;ì            ğ      @5-             k‡ÿÿK!      (       ÀD 
+Cì            €      06-             ¨n‡ÿÿ­      (       ÀD 
+iÅí                  €\-             k‡ÿÿóˆ     (       ÀD 
+‘Ïí                  0]-             ¨n‡ÿÿ„‹     (       ÀD 
+;î            à       c-             k‡ÿÿTu      (       ÀD 
+K‚î                  @d-             ¨n‡ÿÿû±      (       ÀD 
+î            À      @e-             k‡ÿÿJR      (       ÀD 
+jî                   f-             ¨n‡ÿÿÑ      (       ÀD 
+†®î                   g-             k‡ÿÿ9      (       ÀD 
+€¾î                   h-             ¨n‡ÿÿÃ      (       ÀD 
+¶Îî                   i-             k‡ÿÿá      (       ÀD 
+­Üî            à       j-             ¨n‡ÿÿŞ      (       ÀD 
+Îíî                  ğj-             k‡ÿÿÅ      (       ÀD 
+àıî                  ğk-             ¨n‡ÿÿñ      (       ÀD 
+…ï            ğ      ğl-             k‡ÿÿ[      (       ÀD 
+øï                  àm-             ¨n‡ÿÿÍ      (       ÀD 
+-ï                  àn-             k‡ÿÿP      (       ÀD 
+º9ï            Ğ      ào-             ¨n‡ÿÿ[      (       ÀD 
+/Jï                  °p-             k‡ÿÿÊ      (       ÀD 
+JSï                  Àq-             ¨n‡ÿÿ\      (       ÀD 
+Õiï            P      `s-             k‡ÿÿP      (       ÀD 
+ï{ï            ğ      às-             ¨n‡ÿÿœ'      (       ÀD 
+éˆï            Ğ      Ğt-             k‡ÿÿ(      (       ÀD 
+5ï            @       u-             ¨n‡ÿÿ      (       ÀD 
+l¬ï            À      w-             k‡ÿÿO"      (       ÀD 
+0ğ            P      °z-             ¨n‡ÿÿ„      (       ÀD 
+!ğ            P       {-             k‡ÿÿws      (       ÀD 
+ò+ğ            €      |-             ¨n‡ÿÿÛ      (       ÀD 
+QCğ            P      À}-             k‡ÿÿZ!      (       ÀD 
+¤Tğ                   ~-             ¨n‡ÿÿ´'      (       ÀD 
+¬dğ                   -             k‡ÿÿw       (       ÀD 
+asğ            ğ       €-             ¨n‡ÿÿn      (       ÀD 
+_ğ            °      -             k‡ÿÿc      (       ÀD 
+Ëğ            0      Ğ-             ¨n‡ÿÿ      (       ÀD 
+N‡ğ            @      ‚-             k‡ÿÿĞ      (       ÀD 
+Í‘ğ            0      À‚-             ¨n‡ÿÿG      (       ÀD 
+Ùcñ            ğ      0 -             k‡ÿÿ¨Û      (       ÀD 
+,Ÿñ            €       ¡-             ¨n‡ÿÿ‹     (       ÀD 
+3µñ                   ¢-             k‡ÿÿÛO      (       ÀD 
+<½ñ                   £-             ¨n‡ÿÿ      (       ÀD 
+€Ìñ            à      £-             k‡ÿÿö      (       ÀD 
+¸Ûñ                  p¤-             ¨n‡ÿÿp      (       ÀD 
+Líñ            ğ      p¥-             k‡ÿÿƒ      (       ÀD 
+'îñ                   `¦-             ¨n‡ÿÿÖ      (       ÀD 
+Qò                   €¬-             k‡ÿÿ)c      (       ÀD 
+Ù_ò            À      à¬-             ¨n‡ÿÿ_q      (       ÀD 
+€’ó            À      Ğ¼-             k‡ÿÿ›@     (       ÀD 
+5§ó            °      0¾-             ¨n‡ÿÿ.F     (       ÀD 
+¶¯ó            p       ¿-             k‡ÿÿ      (       ÀD 
+µ3ô            ğ      °Æ-             ¨n‡ÿÿZ‹      (       ÀD 
+›;ô            €       Ç-             k‡ÿÿåŠ      (       ÀD 
+»Pô            ğ      €È-             ¨n‡ÿÿ¾      (       ÀD 
+¹Uô            @      pÉ-             k‡ÿÿ      (       ÀD 
+ï·ô            P      `Ì-             ¨n‡ÿÿİe      (       ÀD 
+PĞô            À      pÍ-             k‡ÿÿz      (       ÀD 
+ÿÔô            0      PÎ-             ¨n‡ÿÿ/      (       ÀD 
+î$õ                  PÓ-             k‡ÿÿ`S      (       ÀD 
+–3õ                  `Ó-             ¨n‡ÿÿ4^      (       ÀD 
+¹9õ            `      `Ô-             k‡ÿÿ      (       ÀD 
+Ğ^õ                  Ö-             ¨n‡ÿÿÑ)      (       ÀD 
+jmõ            ğ      ×-             k‡ÿÿ23      (       ÀD 
+Juõ            €       Ø-             ¨n‡ÿÿ      (       ÀD 
+ˆàõ            €       ò.             k‡ÿÿÆq      (       ÀD 
+Ç ÷                   Ã/             ¨n‡ÿÿ\Š     (       ÀD 
+½\÷            `      àÅ/             k‡ÿÿ5{     (       ÀD 
+Õk÷            `      ĞÆ/             ¨n‡ÿÿ÷i      (       ÀD 
+ˆ›÷            ğ      @É/             k‡ÿÿİ=      (       ÀD 
+ù                  Pİ/             ¨n‡ÿÿA¥     (       ÀD 
+Ñ$ù            Ğ      PŞ/             k‡ÿÿˆ     (       ÀD 
+ú¾ù                  @
+0             ¨n‡ÿÿ¦«      (       ÀD 
+Òù                  @0             k‡ÿÿü«      (       ÀD 
+ßù                  @0             ¨n‡ÿÿÁ      (       ÀD 
+ïù                  @0             k‡ÿÿÉ      (       ÀD 
++ÿù                  @0             ¨n‡ÿÿÙ      (       ÀD 
+Áú            €      @0             k‡ÿÿX      (       ÀD 
+Çú            ğ      à0             ¨n‡ÿÿK      (       ÀD 
+Ìú            €      Ğ0             k‡ÿÿ      (       ÀD 
+U6ú                  °0             ¨n‡ÿÿ0      (       ÀD 
+<ú            `      °0             k‡ÿÿ3      (       ÀD 
+nLú                  0             ¨n‡ÿÿ´      (       ÀD 
+çú                  0             k‡ÿÿgT      (       ÀD 
+JŸú                  0             ¨n‡ÿÿpQ      (       ÀD 
+è£ú            P      0             k‡ÿÿ      (       ÀD 
+|¶ú                  €0             ¨n‡ÿÿ·      (       ÀD 
+ş¿ú                   €0             k‡ÿÿª      (       ÀD 
+˜Éú                  00             ¨n‡ÿÿÎ      (       ÀD 
+”Ùú            À      ğ0             k‡ÿÿ€      (       ÀD 
+Qíú            ğ       0             ¨n‡ÿÿ­"      (       ÀD 
+£ûú            à      ğ0             k‡ÿÿå       (       ÀD 
+½û                  Ğ0             ¨n‡ÿÿ%      (       ÀD 
+Ãû                  0             k‡ÿÿæ      (       ÀD 
+sû            P      0             ¨n‡ÿÿ¶      (       ÀD 
+àEû                  p0             k‡ÿÿĞ,      (       ÀD 
+†Jû            @      p 0             ¨n‡ÿÿ©-      (       ÀD 
+ù[û                   0!0             k‡ÿÿÌ      (       ÀD 
+ú‘û            @      ğ$0             ¨n‡ÿÿG      (       ÀD 
+Ïµû                   Ğ&0             k‡ÿÿÁX      (       ÀD 
+üÌû            P      (0             ¨n‡ÿÿ™:      (       ÀD 
+¸ü            @      0)0             k‡ÿÿĞQ      (       ÀD 
+¾(ü            @       +0             ¨n‡ÿÿÚZ      (       ÀD 
+iAü            @      °,0             k‡ÿÿÓ7      (       ÀD 
+|Rü            @      À-0             ¨n‡ÿÿÚ(      (       ÀD 
+5kü            ğ       .0             k‡ÿÿæ(      (       ÀD 
+ªsü            P      Ğ/0             ¨n‡ÿÿO       (       ÀD 
+5€ü            °      000             k‡ÿÿ¢      (       ÀD 
+O‘ü            0      °10             ¨n‡ÿÿ°      (       ÀD 
+Èı            p      p90             k‡ÿÿh      (       ÀD 
+ı            @      ğ90             ¨n‡ÿÿİƒ      (       ÀD 
+R-ı            À      à:0             k‡ÿÿ      (       ÀD 
+2ı            @      °;0             ¨n‡ÿÿŸ      (       ÀD 
+^¯ı                  ?0             k‡ÿÿÍ€      (       ÀD 
+*¼ı            À      @0             ¨n‡ÿÿº‰      (       ÀD 
+Ğı                   A0             k‡ÿÿ°      (       ÀD 
+Hßı            ğ       B0             ¨n‡ÿÿò!      (       ÀD 
+ ïı                  C0             k‡ÿÿ&      (       ÀD 
+±ùı            °      D0             ¨n‡ÿÿ      (       ÀD 
+üYş                  @J0             k‡ÿÿ£g      (       ÀD 
+	hş            à      @K0             ¨n‡ÿÿBm      (       ÀD 
++wş            ğ       L0             k‡ÿÿw      (       ÀD 
+°‡ş                  M0             ¨n‡ÿÿ      (       ÀD 
+I‹ş            0      N0             k‡ÿÿu      (       ÀD 
+¾˜ş            °      @N0             ¨n‡ÿÿĞ      (       ÀD 
+-¨ş                  O0             k‡ÿÿh      (       ÀD 
+Ô¶ş            ğ      P0             ¨n‡ÿÿ…      (       ÀD 
+Ãøş            ğ       Q0             k‡ÿÿ@O      (       ÀD 
+7ÿ            à      ğQ0             ¨n‡ÿÿO      (       ÀD 
+Eÿ                  ğR0             k‡ÿÿ$      (       ÀD 
+`ÿ            p      ğW0             ¨n‡ÿÿ…W      (       ÀD 
++lÿ            p      °X0             k‡ÿÿxQ      (       ÀD 
+"í                   `m0             ¨n‡ÿÿŒ     (       ÀD 
+—                    n0             k‡ÿÿe“     (       ÀD 
+¯                   o0             ¨n‡ÿÿi"      (       ÀD 
+Ô                    p0             k‡ÿÿÀ      (       ÀD 
+0”            €      Ğw0             ¨n‡ÿÿ‚      (       ÀD 
+;¦                  px0             k‡ÿÿÒ’      (       ÀD 
+F…                   ƒ0             ¨n‡ÿÿğ      (       ÀD 
+Ë£                  …0             k‡ÿÿ@ü      (       ÀD 
+ù¥                   †0             ¨n‡ÿÿ®      (       ÀD 
+/                  0‹0             k‡ÿÿô`      (       ÀD 
+Ô(            °      °0             ¨n‡ÿÿA‚      (       ÀD 
+Ïh            Ğ      `0             k‡ÿÿQa      (       ÀD 
+¹p            €      00             ¨n‡ÿÿËF      (       ÀD 
+i€            €       0             k‡ÿÿi      (       ÀD 
+*À            Ğ      Ğ“0             ¨n‡ÿÿoN      (       ÀD 
+²á            €      0–0             k‡ÿÿG`      (       ÀD 
+Ÿò                  À–0             ¨n‡ÿÿG1      (       ÀD 
+            ğ      À—0             k‡ÿÿÌ      (       ÀD 
+q,            ğ      pš0             ¨n‡ÿÿ…8      (       ÀD 
+9            Ğ      `›0             k‡ÿÿ˜6      (       ÀD 
+v>            P      0œ0             ¨n‡ÿÿ°      (       ÀD 
+ŠQ            ğ      Àœ0             k‡ÿÿÇ      (       ÀD 
+~[                   °0             ¨n‡ÿÿ–      (       ÀD 
+¬l            ğ      p0             k‡ÿÿÂ      (       ÀD 
+ }                  `Ÿ0             ¨n‡ÿÿz       (       ÀD 
+8                  ` 0             k‡ÿÿ      (       ÀD 
+?                  `¡0             ¨n‡ÿÿÎ      (       ÀD 
+Ş            à      `¢0             k‡ÿÿ‰O      (       ÀD 
+Çå            €      @£0             ¨n‡ÿÿ?G      (       ÀD 
+7ş                  @¤0             k‡ÿÿî      (       ÀD 
+T                  @¥0             ¨n‡ÿÿ       (       ÀD 
+É            €      Ğ¥0             k‡ÿÿI      (       ÀD 
+^            p      `¦0             ¨n‡ÿÿ      (       ÀD 
+g2            `       ¨0             k‡ÿÿ"      (       ÀD 
+`            À      `·0             ¨n‡ÿÿÅH     (       ÀD 
+\p            @      à¸0             k‡ÿÿ=     (       ÀD 
+à|            P       ¹0             ¨n‡ÿÿ¥      (       ÀD 
+p            €      pº0             k‡ÿÿ4      (       ÀD 
+rŸ            `      °»0             ¨n‡ÿÿ®!      (       ÀD 
+©            €      0¼0             k‡ÿÿ      (       ÀD 
+®Ó                  P¾0             ¨n‡ÿÿL3      (       ÀD 
+¹ã                  P¿0             k‡ÿÿ­9      (       ÀD 
+Ôğ            Ğ      PÀ0             ¨n‡ÿÿÅ      (       ÀD 
+tõ            P       Á0             k‡ÿÿY      (       ÀD 
+T            Ğ      €Á0             ¨n‡ÿÿ5      (       ÀD 
+G            P      PÂ0             k‡ÿÿ^      (       ÀD 
+Ñ            À      °Â0             ¨n‡ÿÿ      (       ÀD 
+~            P      pÃ0             k‡ÿÿÎ      (       ÀD 
+yA            °      €Å0             ¨n‡ÿÿn*      (       ÀD 
+ïT                  `Æ0             k‡ÿÿò9      (       ÀD 
+	c            à      `Ç0             ¨n‡ÿÿO       (       ÀD 
+°g            @      @È0             k‡ÿÿt      (       ÀD 
+ò°            `      Ğİ0             ¨n‡ÿÿ¯L      (       ÀD 
+ªÂ            0      ß0             k‡ÿÿZ      (       ÀD 
+.            À      â0             ¨n‡ÿÿ2|      (       ÀD 
+E            `      àã0             k‡ÿÿ       (       ÀD 
+`L            0      ä0             ¨n‡ÿÿ.      (       ÀD 
+*]                  Àä0             k‡ÿÿ      (       ÀD 
+ni            À      Àå0             ¨n‡ÿÿD      (       ÀD 
+Õw            ğ      €æ0             k‡ÿÿc      (       ÀD 
+Í                   pç0             ¨n‡ÿÿ=      (       ÀD 
+m—            `       é0             k‡ÿÿT      (       ÀD 
+ï.	            à      ğñ0             ¨n‡ÿÿ¬      (       ÀD 
+8	            p       ó0             k‡ÿÿ­Ÿ      (       ÀD 
+Ï}	                  €ó0             ¨n‡ÿÿ©M      (       ÀD 
+üŒ	                  €ô0             k‡ÿÿ÷S      (       ÀD 
+…–	                   €õ0             ¨n‡ÿÿu      (       ÀD 
+¬	                  pö0             k‡ÿÿº      (       ÀD 
+Äº	            ğ      p÷0             ¨n‡ÿÿ#      (       ÀD 
+4Ç	            À      `ø0             k‡ÿÿ¦      (       ÀD 
+şÌ	            `       ù0             ¨n‡ÿÿŞ      (       ÀD 
+gû	            `       ü0             k‡ÿÿñ2      (       ÀD 
+”K
+                  ` 1             ¨n‡ÿÿ~      (       ÀD 
+S
+            €      `1             k‡ÿÿ­V      (       ÀD 
+©d
+            €      p1             ¨n‡ÿÿ¥      (       ÀD 
+Él
+            P      01             k‡ÿÿH      (       ÀD 
+²à            €      ğ1             ¨n‡ÿÿ{     (       ÀD 
+ô                  1             k‡ÿÿ\†     (       ÀD 
+à	                   1             ¨n‡ÿÿ0(      (       ÀD 
+x            P       1             k‡ÿÿ*      (       ÀD 
+í"                   ğ1             ¨n‡ÿÿÕ      (       ÀD 
++                  1             k‡ÿÿ       (       ÀD 
+a[                  ğ;1             ¨n‡ÿÿd7     (       ÀD 
+Åm            ğ      ğ<1             k‡ÿÿ°A     (       ÀD 
+Sy            `      `>1             ¨n‡ÿÿ°      (       ÀD 
+€            p      à>1             k‡ÿÿŸ      (       ÀD 
+]È            ğ      ĞB1             ¨n‡ÿÿN      (       ÀD 
+S6                  àF1             k‡ÿÿÆ´      (       ÀD 
+ÑG                  €G1             ¨n‡ÿÿ:~      (       ÀD 
+×W                  €H1             k‡ÿÿy       (       ÀD 
+Ïg                  €I1             ¨n‡ÿÿ      (       ÀD 
+„v            ğ      €J1             k‡ÿÿG      (       ÀD 
+œƒ            Ğ      pK1             ¨n‡ÿÿk      (       ÀD 
+ƒ“                  @L1             k‡ÿÿ”      (       ÀD 
+„¢            ğ      @M1             ¨n‡ÿÿ²      (       ÀD 
+F²            à      0N1             k‡ÿÿZ      (       ÀD 
+I´            @      O1             ¨n‡ÿÿ’      (       ÀD 
+JÃ            ğ      PO1             k‡ÿÿÑ      (       ÀD 
+Ò            à      @P1             ¨n‡ÿÿ&      (       ÀD 
+â                   Q1             k‡ÿÿ›      (       ÀD 
+Œò                   R1             ¨n‡ÿÿŒ      (       ÀD 
+õ            0       S1             k‡ÿÿõ      (       ÀD 
+Çÿ            p      S1             ¨n‡ÿÿ      (       ÀD 
+ñc                   ®1             k‡ÿÿvn      (       ÀD 
+œm                   ¯1             ¨n‡ÿÿHm      (       ÀD 
+Dq            P      °1             k‡ÿÿ      (       ÀD 
+ƒ                  °1             ¨n‡ÿÿ§      (       ÀD 
+"™                  ğ±1             k‡ÿÿf'      (       ÀD 
+Tª                   ³1             ¨n‡ÿÿ&      (       ÀD 
+PÁ                  p´1             k‡ÿÿë&      (       ÀD 
+fÑ                  pµ1             ¨n‡ÿÿÅ%      (       ÀD 
+eé                  ğ¶1             k‡ÿÿ¤&      (       ÀD 
+ø            ğ      ğ·1             ¨n‡ÿÿA%      (       ÀD 
+            ğ      à¸1             k‡ÿÿ7      (       ÀD 
+š            À      Ğ¹1             ¨n‡ÿÿ4      (       ÀD 
+¢'                  Ğº1             k‡ÿÿ=      (       ÀD 
+¢7                  Ğ»1             ¨n‡ÿÿÃ"      (       ÀD 
+ºG                  Ğ¼1             k‡ÿÿÌ      (       ÀD 
+¦ˆ            à      Ğ½1             ¨n‡ÿÿÂO      (       ÀD 
+=˜            ğ      À¾1             k‡ÿÿ@O      (       ÀD 
+¿¨                  °¿1             ¨n‡ÿÿç      (       ÀD 
+Ø²                  ĞÀ1             k‡ÿÿb      (       ÀD 
+~Ú                  @Ã1             ¨n‡ÿÿx0      (       ÀD 
+¥ğ                   Ä1             k‡ÿÿÈ<      (       ÀD 
+:/                  È1             ¨n‡ÿÿµS      (       ÀD 
+<?                  É1             k‡ÿÿM      (       ÀD 
+[G                  Ê1             ¨n‡ÿÿç      (       ÀD 
+ÖO            €       Ê1             k‡ÿÿT      (       ÀD 
+o[                  @Ë1             ¨n‡ÿÿ      (       ÀD 
+äb            €      ĞË1             k‡ÿÿ      (       ÀD 
+Š                  Î1             ¨n‡ÿÿ3      (       ÀD 
+¶›            À      Ï1             k‡ÿÿÃ7      (       ÀD 
+­£                  ĞÏ1             ¨n‡ÿÿ¾      (       ÀD 
+Z-                  0Õ1             k‡ÿÿi      (       ÀD 
+Y:                   Ö1             ¨n‡ÿÿ—•      (       ÀD 
+=B            €      Ö1             k‡ÿÿÊ      (       ÀD 
+“W                  Ğ×1             ¨n‡ÿÿ       (       ÀD 
+™_            €      `Ø1             k‡ÿÿP      (       ÀD 
+øh                  àØ1             ¨n‡ÿÿI      (       ÀD 
+ùx                  pÙ1             k‡ÿÿd      (       ÀD 
+‚                   pÚ1             ¨n‡ÿÿ”      (       ÀD 
+¿˜            ğ      €Û1             k‡ÿÿ„      (       ÀD 
+#¥            À      pÜ1             ¨n‡ÿÿ†!      (       ÀD 
+OÊ                  €Ş1             k‡ÿÿS0      (       ÀD 
+áĞ            `      ß1             ¨n‡ÿÿ¢*      (       ÀD 
+            p      Àâ1             k‡ÿÿŒ9      (       ÀD 
+1            p      Àã1             ¨n‡ÿÿcC      (       ÀD 
+,$            p      °ä1             k‡ÿÿ      (       ÀD 
+L1            p      €å1             ¨n‡ÿÿ,      (       ÀD 
+¼6            P       æ1             k‡ÿÿ¥      (       ÀD 
+ür            P      €æ1             ¨n‡ÿÿ¿@      (       ÀD 
+Ù‡            P      àç1             k‡ÿÿ³P      (       ÀD 
+iË            Ğ      ë1             ¨n‡ÿÿ…W      (       ÀD 
+âİ            `       í1             k‡ÿÿ(U      (       ÀD 
+(ä            0      Àí1             ¨n‡ÿÿœ      (       ÀD 
+ö            à       î1             k‡ÿÿ:      (       ÀD 
+#ü            `       ï1             ¨n‡ÿÿí      (       ÀD 
+-#            à      ğğ1             k‡ÿÿÕ+      (       ÀD 
+®-            €       ò1             ¨n‡ÿÿ1      (       ÀD 
+õ[                  Ğô1             k‡ÿÿs7      (       ÀD 
+`            0      põ1             ¨n‡ÿÿ_2      (       ÀD 
+h                   ğõ1             k‡ÿÿó
+      (       ÀD 
+`;            ğ      0ÿ1             ¨n‡ÿÿjÚ      (       ÀD 
+gJ            ğ        2             k‡ÿÿ“á      (       ÀD 
+„Y            ğ      2             ¨n‡ÿÿÁ      (       ÀD 
+ıi                   2             k‡ÿÿ?      (       ÀD 
+l            0       2             ¨n‡ÿÿ4      (       ÀD 
+œy            Ğ      02             k‡ÿÿZ      (       ÀD 
+&            P      02             ¨n‡ÿÿw      (       ÀD 
+Ù            0      °	2             k‡ÿÿB^      (       ÀD 
+õ                   2             ¨n‡ÿÿÿr      (       ÀD 
+            Ğ      °2             k‡ÿÿL(      (       ÀD 
+‰                  €2             ¨n‡ÿÿ      (       ÀD 
+6            Ğ      €2             k‡ÿÿí      (       ÀD 
+¬-            à      P2             ¨n‡ÿÿÚ      (       ÀD 
+‡h            €      02             k‡ÿÿ'H      (       ÀD 
+iƒ                  `2             ¨n‡ÿÿ–T      (       ÀD 
+â            Ğ      `2             k‡ÿÿ]&      (       ÀD 
+ç£                  `2             ¨n‡ÿÿ–      (       ÀD 
+ä±            à      `2             k‡ÿÿÌ       (       ÀD 
+èÅ                  €2             ¨n‡ÿÿ°       (       ÀD 
+¥Ô            ğ      €2             k‡ÿÿu!      (       ÀD 
+ë                  Ğ2             ¨n‡ÿÿ¹#      (       ÀD 
+û                  Ğ2             k‡ÿÿ%      (       ÀD 
+%                  @2             ¨n‡ÿÿ¹%      (       ÀD 
+»             ğ      @2             k‡ÿÿD$      (       ÀD 
+Û/            ğ      02             ¨n‡ÿÿC      (       ÀD 
+©ƒ            0      ğ-2             k‡ÿÿ¥a     (       ÀD 
+µÒ            P      Ğ[2             ¨n‡ÿÿ¤¡     (       ÀD 
+            @      @e2             k‡ÿÿü      (       ÀD 
+L§                  f2             ¨n‡ÿÿ·Ó      (       ÀD 
+Ä¹                  g2             k‡ÿÿÇ7      (       ÀD 
+´Ç            À      h2             ¨n‡ÿÿ%      (       ÀD 
+‹Ü            à      i2             k‡ÿÿ‰!      (       ÀD 
+´á            P      pj2             ¨n‡ÿÿæ      (       ÀD 
+åô            À       k2             k‡ÿÿ.      (       ÀD 
+Ú:            ğ      àk2             ¨n‡ÿÿºX      (       ÀD 
+B            p      Ğl2             k‡ÿÿ}L      (       ÀD 
+ÉŞ                   u2             ¨n‡ÿÿ¸¢      (       ÀD 
+_â                  Ğu2             k‡ÿÿó      (       ÀD 
+Jf            ğ      |2             ¨n‡ÿÿÂ†      (       ÀD 
+±u            Ğ       }2             k‡ÿÿø’      (       ÀD 
+2¿            à       ~2             ¨n‡ÿÿ4X      (       ÀD 
+»Ê            @      `2             k‡ÿÿ´S      (       ÀD 
+]Ò                   ğ2             ¨n‡ÿÿÊ      (       ÀD 
+p            P      ‚2             k‡ÿÿË:      (       ÀD 
+Ë8                  „2             ¨n‡ÿÿ›e      (       ÀD 
+CK                  …2             k‡ÿÿ×C      (       ÀD 
+*\            ğ      †2             ¨n‡ÿÿü!      (       ÀD 
+Bk            Ğ      €‡2             k‡ÿÿ•      (       ÀD 
+Êp            P      Pˆ2             ¨n‡ÿÿG      (       ÀD 
+ß                  P‰2             k‡ÿÿ>$      (       ÀD 
+w•            @      PŠ2             ¨n‡ÿÿû#      (       ÀD 
+R›            P       Š2             k‡ÿÿ1	      (       ÀD 
+E¢                   ¤2             ¨n‡ÿÿe     (       ÀD 
+Ç´                   ¥2             k‡ÿÿ     (       ÀD 
+ÑÄ            à       ¦2             ¨n‡ÿÿD!      (       ÀD 
+ÃÕ            ğ       §2             k‡ÿÿ¶      (       ÀD 
+ç            ğ      ğ§2             ¨n‡ÿÿ!      (       ÀD 
+£ì            P      à¨2             k‡ÿÿ«      (       ÀD 
+„            à      ©2             ¨n‡ÿÿB      (       ÀD 
+0	            @      pª2             k‡ÿÿ      (       ÀD 
+¥"                  «2             ¨n‡ÿÿí      (       ÀD 
+%            0      ¬2             k‡ÿÿy      (       ÀD 
+’0            `      p¬2             ¨n‡ÿÿ°      (       ÀD 
+<            €      ğ¬2             k‡ÿÿh      (       ÀD 
+"N            P       ®2             ¨n‡ÿÿ¨      (       ÀD 
+p            `      à¯2             k‡ÿÿ3      (       ÀD 
+ {            p      €»2             ¨n‡ÿÿ,     (       ÀD 
+B            `      `½2             k‡ÿÿ-,     (       ÀD 
+çÉ            ğ      @¿2             ¨n‡ÿÿÈM      (       ÀD 
+>Û            ğ      0À2             k‡ÿÿ÷<      (       ÀD 
+
+ì            à       Á2             ¨n‡ÿÿÊ       (       ÀD 
+‚ş                   Â2             k‡ÿÿé!      (       ÀD 
+.             0      Ã2             ¨n‡ÿÿÙ      (       ÀD 
+¶             @       Ã2             k‡ÿÿÒ      (       ÀD 
+a                    ğÃ2             ¨n‡ÿÿÖ      (       ÀD 
+É!                  @Õ2             k‡ÿÿh¹     (       ÀD 
+Ô!                   @Ö2             ¨n‡ÿÿRÀ     (       ÀD 
+§Ü"                  ğò2             k‡ÿÿS     (       ÀD 
+$æ"            0      ğó2             ¨n‡ÿÿO     (       ÀD 
+’ü"            ğ      Àô2             k‡ÿÿ§      (       ÀD 
+Ş#            €      °õ2             ¨n‡ÿÿî      (       ÀD 
+S##                  Àö2             k‡ÿÿˆ%      (       ÀD 
+j#                  À÷2             ¨n‡ÿÿ1c      (       ÀD 
+Í†#                  `ù2             k‡ÿÿ4b      (       ÀD 
+•#            €      `ú2             ¨n‡ÿÿ@$      (       ÀD 
+¶K$                   3             k‡ÿÿ§Ã      (       ÀD 
+oT$            €       3             ¨n‡ÿÿŞÃ      (       ÀD 
+¬h$                  3             k‡ÿÿ¯      (       ÀD 
+&{$                  3             ¨n‡ÿÿ¿%      (       ÀD 
+µ$                  3             k‡ÿÿÆ#      (       ÀD 
+0 $                  3             ¨n‡ÿÿ´#      (       ÀD 
+fò$            à      `
+3             k‡ÿÿPc      (       ÀD 
+÷$            @      @3             ¨n‡ÿÿ{U      (       ÀD 
+ü%            P      03             k‡ÿÿF      (       ÀD 
+®%            P      à3             ¨n‡ÿÿ=      (       ÀD 
+m˜&            ğ      `3             k‡ÿÿ     (       ÀD 
+ë¦&            €      P3             ¨n‡ÿÿN     (       ÀD 
+Á¬&            €      à3             k‡ÿÿ      (       ÀD 
+Ã&                   3             ¨n‡ÿÿı      (       ÀD 
+óÎ&            °      !3             k‡ÿÿ½!      (       ÀD 
+Ôï&                   #3             ¨n‡ÿÿ8,      (       ÀD 
+Y'                   $3             k‡ÿÿT2      (       ÀD 
+	'            p       %3             ¨n‡ÿÿ      (       ÀD 
+{'            `      à%3             k‡ÿÿÜ      (       ÀD 
+÷l'            `      `*3             ¨n‡ÿÿöb      (       ÀD 
+¦ï'                  .3             k‡ÿÿ@Õ      (       ÀD 
+ö'            `      /3             ¨n‡ÿÿBˆ      (       ÀD 
+(                  Ğ/3             k‡ÿÿ$      (       ÀD 
+F (            à      Ğ03             ¨n‡ÿÿ»)      (       ÀD 
+õ3(                  À13             k‡ÿÿ¢"      (       ÀD 
+º<(            €      À23             ¨n‡ÿÿ?      (       ÀD 
+ëS(            °      Ğ33             k‡ÿÿ¬      (       ÀD 
+íƒ(                  63             ¨n‡ÿÿ.F      (       ÀD 
+#†(            0      73             k‡ÿÿ1      (       ÀD 
+ƒ‹(                   `73             ¨n‡ÿÿ:      (       ÀD 
+‡(            à       73             k‡ÿÿ»      (       ÀD 
+Õ²(            Ğ      Ğ83             ¨n‡ÿÿŠ&      (       ÀD 
+hL)                   >3             k‡ÿÿ¬      (       ÀD 
+2U)            €       ?3             ¨n‡ÿÿ ¡      (       ÀD 
+jq)                   @3            ¶  s o f t  - W i n d xw ¨- S ¨o r e ó 7*œıå®\¼ ÑCÚşîğMU ¤c do œoz/ O p Šr a ¢i ¾n l  €ØÅó      ¢ @ A  M P  Lce ‘sA 	n g   EaP c k =g O  D Kl b y½ -a ­ci !¨s .#A ;c s _ 2 4 *5€1€0€	x (6 4€_€mz ª1€Ve€*t€y€
+2€0€B( 3 )€XOneSto reApplic ationLic enseMana ger::Get	ForInst alledPac‚k€ onec€ uap\enduÀser\wi €	6\€($mƒ$ b\5 s7a‚7ˆ.c,pp€ I ‚$¨€  **  H€  €0q2€Í0Õ ¼ O‘ßí& €Æ€_Á  €^Á Š €_À  À#cÁ  
+€h ¨ @ €LÀ F@ó ! €AAÂ €E±ìÁ$M@+  mÅÉÀÕÀ$  \@|E&H Â€d b¢-¬:ŸL4@BsPê @ƒi½@mrÀyÿ©]¹ã©p€;:% J;À EÑ©2 EA•E@4 B@ -A@•3 C E@Ù0UÀDÀ-@EÀ›9UÀE@A RA@˜7À
+FÀ7 7   (ÀÄcÀŸi v@®A˜ÄCont entWithI/€ğk–¤LâHQ‚1:DXoWoáGáHh EŸyäHÜrÿHÿHáMñHşïH%õH%ÿH z?–GÿÿHÿ   àH¥`H>äH0 % 2 ?ª2`Œ6`?D`4 C¨0 : AK`@yà ¢M  c hâ¢eàªfàcrà cà n E­¡¦t"?QCàOBàO6 9Q  Key Machine:&:g˜sei˜keìym£‚M_‚MáKáLÊ°€‡ äL{uÿLÿLáLğ•jà•BÄKå•  €%ñLl´ 6$  ¨ÁŸÁ ?áÿè¿›áÙe ÷“ ñ0ş·  ©  º àK`Kà ¸£ 6  ÁR`Do`DkH  RooLt:PDCt E:T V &l€&d’ÃYd±ìqñàğ¡ıTûÿ ÿe1ÿeT£õeÿ ÿ€ÿÿƒ•	ÿ@0?ß_“W“ÿuÿ ÆJôq­ö<n4°A¿d¿d2d±C1p 7àP;:Act@ivate £D:Ô I ià irA¬.cqñ€¢ôä=vÿ8  ÿÿ±óÿûƒ<_ÿóÿ•	ÿÿÿÿ­`ÿ×ÿ­y­Àpp8^­^F0`q^Bp^gÒ]-Ù…e]¿e ğ , V 0…Ñ±h°dğ°eU s° O  r¬ uĞ qRp qĞ ji2SĞ rĞ…q–e‹è>·º ¾a l°¾eS$v`DoBeg~iU¯¿`ÿ¬¿`e²`&¶Ñ'°¼bq'ñ'ğ'ú£ô'dÿ'Ğÿ'ÿ'ÿ'…ÿ«ÁñEBLø`ÿÿ'ó'•	ÿ'p†ÕÿEÿEÿ'ÿ'ÿ')Ê³ìÿ%°ı`0°(qFùE¯@±ğ~p!y'Np ºg0ctğ(3!±ØU5úlaR!ÁaJJ?¯®F0}JñàĞçeñÿP1Û1QÜĞ+Ì±~1 ¿ÌÌqfàlá|îs”' s ¤*  ÿH0     fwf±  7¹ ElfChnk (b)  »8¤ *xı€ 4û   (ş  U,åƒp8 vºÁ•	„     ó  è‘
+  B =	-µ#Î3€9$€9µ÷„²„	›€	*fŒG?€ø‘ ·„m„%©„êM€F€)ºŒ#…t“9ƒ½„Á…ó`  e•«*0*  ÀVÅ{sv 2Í0Õ  O‘ßí&D9ÁUM¢]Š õcöÜ»s–Ã@2A	A Š€8º E v@ e n t ‡	À jÄ¼  x m l s  5 h€	t  p : /@ s 
+c@eÀa s Š.Ài@r o@¨o fÀ
+.ÀoÀ / w iÀ/ (2 0@ 4@0 *8@e†sJ@ÿÿÚ  Åmo@T S y@t€+mÀ#AÿÿYÀEtñ{ P UAvÀd@	r@6À F£KÀ°N a $e€ XÀÀ ) G uB  € A M€"zDõaKI jDÀ'À œ)PÚ
+ Q€a€Li€?i‚ N    "ÀEº	 *V„	iÀMnÀĞ ÀÜ …¸`dÎ L 
+a5lE‚  €@:À  E{ TÀs kÀq  €A`À   ® O 8c€AA$  !	 $à%gjÏ ªKÀyà6o`*dà.¡A À.P@¢‘„;€ib*ÚC@e A4d`Â#£¡haJ<{
+*8T`-m` - F
+ Hg‰F¨-RCàAr d #/Ğ
+ 
+a…à‚ ¢ò C râ–l"Å*\àFF$| 
+ñ
+ A`St`¡Et Kã
+ †‚Á>5Å A-#	e€”ÁEÿÿ£ÁR…ˆ¸µ	 x¶u@aåHá 9 a¨
+×	dVc s ,a¤ A«A;…49 ,hd+ 	à ÂI±À
+T ƒ@TC@ra@mnC 
+#E  iBG ¡š7;n%m@Ae€à;UÀZEÀ4K O@-EÀS0@%7 HàO2 !.	E± . ªe@)u@iàyÀ
+` ¥²fL U a¤   ! [@ P a àU c    `  à a  
+â+À  àEà F "! `BKb ^€å£±ìÁ$M+  mÅÉà Õ$€  ´  å¨¦ à§  M@BFc`‡˜- W`nE ?oÀas - t¢Le ó7*œı å®\¼ÑCÚşØîğ¿©/bq#a&D¡‡ñ0ş·AÇºaH7gR jÒ¾Â–îTÁ\0H  QxÑ¬D‚'Å\DÂ/a€qRCp Qyq'ŠoW@Ñ#ñQ¬reĞM á]a[e   ®Áán‘w	Ú)‚ : ñÖ;pñ-÷0+‰s  õYp+×ÀF€…
+¨Aè 111º.CYsA±n 8â `a'¡& J  À(0p @­6##2 5 lEP 4 BA`- 4 3 4EUP!0ğ D° -EP 6 90E
+A *AP7°F 1 7   Key :ActivatŠe´V:Àe g %qIAgĞ3n l¿à<QvAHp
+r€ñ€pĞiR¥tŸQÿ€ 6 Î€66 ¡06 ! AbA6 €68!P	P  •	 Á  0 db ¢-¬:ŸL4B¸sPê€?37Sğ1¿h7ßß×7np.‚là“€ØÅe„š± Å£TáÅŞÀ'ºçıLÊ7n¾  7Q5%° q&«p 44 ƒeÀNsPêg p31)¡p±ª·p!uZc¶?Q3,‘+Ñá”áoÿ2,¡bÑ1’q5‘"Ws<VZ×4uybr¥0<09 {²p-Z` I0 S ƒiÕÀ`p’Ngğ?l ‘Ún¢[ PQeaà)ñJª:PğNp D +¨l b tLPbĞ şrp R1¡¡7tqUÁn_P1.P1.R51Q ]0 _@§60_± r zğ2Ñ„b0Azb!¤  In vokeLice nseManag erRequir ed oneco reuap\en duser\wiHnst0\l#m#\apiset@host\aã8ionA.cpp fW V ¼coq6ñ6Ø  ¦ô6*5‰ïÿ·ÿ6ÿ6 2 mÿ6ğ …ÿ6@$" àR¶×Š‰m•	÷ÿ6ÿ6ps0 aº3ÿ6{nßoşqÿ6ı6Ñ(êuĞ(9(?Ô(1œq'iw0wÑ&cP r-9)á„ T {€Ä30W8ğ(0UòV-0YD0$DX1KXñZ-ğXA AÇ-«pZ1$1°6°Fğ ¢C05 }Ğ,f0®rp á¦‘be:tğ ¯³ÿ_ÿ_ÿ_FP2P_V4
+ó_.°.. C0lipS`)Ğ+::GetPaDocu mentForCont With IdAn· dMinQual ity onec oreuap\e nduser\winst L\li censemanag \lib\clipp  .cpp À    Ø  **  2P §   .·5 ‰2Í0Õ  O‘ßí
+& 0 2  !    ˆ    F 	 
+'D    .   F  !  AA 8€q  R ¶×Š‰…  $€  ´  ™H  d b¢-¬:ŸL4 BsPê  M  i c r o s€f t -D W€	n d€wQ€
+- S€
+o€e  ó7*œıå® \¼ÑCÚşîğ«/ O p *e€$a€(i€/n a l —€ØÅˆe  ”  Š wZ ”@€‹D€c€d‚Jg :   { "€e gA€c y P€)oE€Xu€et I€"€" 0€e 2D 6À0 3À61¬ 4ÀA4@bÂ b 5 7@- UA8À7@fÀbUÂ7@}ÀND@dˆeCuÀ„mPo Œr”documenºt‚”2€Ã‘Á“  d2¨Ä“d6ÿ“×“©ÿÏ“E‚$ Í“E&ÿ“ÿ“©À{e ã“ r9`Iª?äIA`Ac`JpbP¢n`H  kàyàJ¢w`Lt h L ¡n `eàI DQ  { 8 BB  FQ`KE A J3 4#` ¡G6 E`I- ª9 0 -à2 ª1à6`FàCà¨5 } 	f Zrà JCà n e ¡  +àWa2 	2â	4 ŠBà- W3 C ª- 
+D"	- EàXª9àE A€…AâW*4 1 Z7à( ªf r t m ]¢t` h )€<C`œS  `œ::GetKeyDTForCont@UWit`hIdAn©Á¥eQ©p ß` à$- Eá^á_€  :©ä_{ÿ_ÿ©@‰ ıñ©/ğ_%"€ í_%¿ÿ_¢‘ÿ©ÿ©»±ÿ_À”€ é_R`]t u]`n Bë_a¾c`m¿`cQeT!°!cTiàªz àL5` !^?T9T ^ ¿P¿P?ú}Òt5+q'ñ'@ğ'ªô'¹9yÿW  ÿ|1}ÿ|ù|ñÿ| ÿ ÿW0" Ûı'•	  Ma‚xÏÿ{ÿ{ÿ{ß*o İÿ&Vn°Dı{nğ&/øVGÕò&t¶&lğ aTUÕ%İ¿N4pV¿N¿N20N·N¨  LcœMcœCbMExistinÀgLease€Ld¿¡¡¡´ A¤â{Ÿò#cq#ñ#0  «yô#i ÿ#ÿ#ÿ A€P¡ÿ{õ Şÿ#ÿÂ#@ ı#•	ÿKÿ i_!!ÿ ß¤ß¤tĞrP ÿ$ÿ$  hé 4 ÿ iğr÷ •It’¡L· e 1Poª5Ğw3ğp1sep jd0 -°&fp$14ÕPv7p-PufĞ-Ñ{­QN0ğ }8° ,0 [ßÑQS‘.sPa»P± oP
+Ó¨‘¬vp0©q…" Qip0O°Vf0Ñe:€rí0Xe×2Epó2ñWõ“1]f]eğhµP¶n2»a‘^pP«Ñ·Ui²"Ğªtp:•/’Ç‘. mğ^Q Zp@ÉmÃ.oÑ0/ vP.Ğ‰[AQ	/ ? b0n[0 ÑˆcPñ	yÒº=UĞs°h0G%ĞaµĞ7ğ5ĞQ6° 6°20ñ»7 &W2iq=ieĞ4½Ğd0qDÑ1“dPVc0q6²‡eĞa«²sDfğ7p&pİ±iQÙ$=°Ÿ$zf°f°±%ÑÃÑš4kñ60p	ñ$6u8p(&P1Ñ§tT =NppĞ1l±2y T°ÍÓ=Ğ~eĞÑ51"Ñ3«qs­’[P Ñ©bf¶eğ‘-d0‘10k‘Ñ©a-0ñ1­6Ğ1cĞ5¬] 3 dğ :0 +{ª,ppcğ³a şgP•ñÙ›q
+53ñŞe(³+³_?eĞñÛÚd-²#?7°5ÿeñì¶  p e " : 0m s i x H, p r o  d u c t A $d O nC Œ´[ ] ”I J–9 N 0 ˆ8 6 F S (4 W "js Vk ®Z0 1 "D }Wo l A‹ {Q2#9 -¨- 1 T 6 »?: 3 4 . 52 2 7µ + !0!{r ïªf Ûe ÉhÑS€1ªa€t€Ip€|:€ªr€e‚Uv€r€*i€†n‚7€R   DecodeCu stomPoli cy on€	re uap\endu€ser\win re\ ense manag€li b\clipdo cument.cpp W  0   **  `  ¬  €
+¤‰ 2Í0Õ  O‘ßí&… €    ƒ  D € €#€ 
+‚ *€
+  •€ F@! `AAÂ €E  R¶×Š ‰…  $  D´G& ‚€db¢-¬: ŸL4BsPê¨  M@”cÀVo@P¨o f@V-ÀiÀ‘ªdÀSw@-@‡tÀÁeó7*œıå® \¼ÑCÚşîğk/@sA³r aÀÃkaÀ€Ø Åe  J  ê~€;- J?À EC¶QA$g  @e@sAÀ|  { D@5QÀ•C E@DÀ8UÀ°C@-Àµ3@š6±ÀD B QA¦2@ª5@DÀEÀ5@¤ÚEÀ}@Á8 @BÁŠuÀtÀ>  CÀ€Stor …::G etLeaseD…sForKeyß…ñ—ŸÀ‚—ÂvÀ¢ƒÁ•Á—€  ­äKN3ÿKÿK@+ ñK-ÿğK%‚G€ íK%ÿKÿK¯ÿK ½SÿKÀìK¶R`I!‹r`^¥L1àAjlàa`@e`aacU m`n`Ws`fUb  ¯o t$iU ¬  …5` EàO4e¢M-àL3 ¡T¡£D•àVCàRB P6 áRªE AàPA 7`úF X7à£ÿOÿOû›éOâÙâOquiáNáO pä ®äOÆªÿ›ÿ›á ğ›º ! ˆBKå›  €%o`6B íO%  ®¯Á¦?’ÿ™áêsÿM ÷Màñ0ş·ó€Ä¯A½Uá˜JàN *0à  ­6Ã´2 D¶2à?a‘B CEEĞ~VF0 t4P#1"7ƒ H:@LicqlRD°n K@)yÀuN5p g tÀ^£Wn Xg U`+G.d! ĞN°- 	ñ@ D ¯ôŠÿm ?ÿm1 ÿmõmÿ ‚ùğGBLøÿƒ	ÿm•	ÿÿF ÿl´e ÿliğ<ÿnP=¬o İpÿn°ilàÀ)Ê³ÿ½)ƒ±  ê—]Ü3‹ã`e/Yø$P6A‚ÿÿ     Aÿÿ1ĞB° #p =€’w1HM°c h nà  .pQqw	 VTpñzaÒHIP%Ğ ñ;pñZ-÷v p¢a‚ qO «Ÿ
+
+CĞQrpet$3›QQs©Ÿ
+	Ğep Äà’ ¹313Şp314¹3.iPa.×..õVPl1=ÿ74…¿Z¿Zù7  Wô£q3ñ3èğ°ô3Øÿ3P6ÿ3ÿ3±3ÿ3û¡¢ıÿS€€" ıS•	ÿ3ßÿ3ÿ3²ÿ3ÿ3W+ß7eÿSPó ÿS ±^ğSq ÿS¿vEv0Õ/Dpw-PxE¡ÿıSRegiste rCallbacÎk6T)#àe 8ñ•qP±tRş R²šRyšà$pR}ÀB@ y\ ş •	šÀ@bŸoŸO¿UÄSuSyÀŠğ>Zğ@0 aDPOcµğ	dò$g`mÀ"Á‚gğ<c y P’++5ñùëdĞ2 c V0Ğ=Ñé4°–30"4ÕPb2bx7Ó
+8²˜10Ñ3 b õq 7Ğå} ŸåŸ¿Ÿå_Ÿååq$ñ$¡$²ô$¤· şŠ2Í0Õ  O‘ ßí&            Ñ   | $ˆ 
+N  *  .   F M! `AA6 p€â   R¶×Š ‰…  $  À\  ²  €$" db ¢-¬:ŸL4B sPê  M  i c r o s f t - ¢W n d w (- S o #e  ó7*œıå®\ ¼ÑCÚşîğ+=/ O p e€$a€(i€/n a l —€ØÅeD  ”  Ò w­ ”=€‹R€a€Qªt€Jv€L€c€n€Mi n g s u€$t :@   0 x€0QŠ  f€7r€D€l b y L]€>b‚
+Gpi€+s[ ¼‡A€<6s€6_T 2€4€5€1€0 _€56 4E€_À5z 1@6eU@tÀyÀ2@
+0 ,À7 8 m@  LogRe activeLi@censin s ult onec oreuap\e nduser\winstÀ\lÂ
+@emanagÀl ib\telem etry.cpp$ ÍÃ†&~**€    ³D˜G¢ÿ§€f Ñ§ÇĞ§E±ìÁ$M@+ rÜÊÀÕ¨XÀ¨$G& ÿ§¯ N@_ÿ§á§> øÀ¦ªIÄ§IÀ v@‘kàR­¡Q àPajeàsàIª  >a`a Ue j  Be Ja VãlÕ(Ze D/ e`S¡ªs Gr q ibZ `n a_e cD hàc kb_PµÀ…N D ¿\oà³!a¿\x ¿\¡\Bâ±á  Pbay F`a !!t4 BAà‘InvokÄ`eMC[Require ¿a¥aapis€ethost\"k`ation"c$"cCáaáb€  r´äbÂ%ÿbÿ¶a¼}ğ¶9ğb%íbå¶% ó M $ ÁÁ?­ÿ´¿¼§£¼ÿ´ Ë ¼€``Š;ä`S Pr vdYÊB g`n aK§WQ©·e I`cpàB z ÿU.ha
+¿²½²+`p Ò  Serv «BeginAc¢O#³eImpl=¿²sª²P[Ñ’'[!s-q'ñ'àpYµñô'ø4­Yƒ²ƒyƒÚÀr2 }ƒD€uƒtqƒÑÒ`¡ €z´J ™B¡ H— Zv‘”  `¼  •	Yxƒ=‚ApW‘Ñ>×}M@d lP…W„‘*D K w ¤yÿ_ÄRJŠ€à+2CFÔä?.¿ˆW_*Õ„™	T“9Â ± ™UÓ PëÕ80;v*ü`!šÿÿğ  àAÿÿ%° B°  i =àX°‘ÑXsMg©0 œ°'´Vp ´PWu0^c³Ps Ñ+Ôâ×
+ E\Ñ8ñˆ‚C4 ®#ášô0˜o`rpce  º‘-”@UPÕ•aNmÒfr0°”¨ ¡ º ":R;Ú0B$û:°dû<Ús:˜ t°ÑiÕ1n°eĞt°óšUQ/yrGğtğ;e‹P˜qol°( )Pa+±
+Óse§.( ¨C VPe0RP"¨m UP h°BEğDZXF°&‘˜2   Windows|::D<‘ ñ’ a C€ontextFPa ory::GetĞDefaÁ–ÿ  —'—À™!rt ˜b\í¢˜c3>;0  ±'.gq=ò=àf¶ô=Lş²ÿ=ÿ=ÿ=b°õ=ÿe  ™ ! ˆBKuÁ  €Ãı=ñe´  •	ÿeÀÀ–Ÿ;Ÿ;Ÿ;r5Q½oÒ‘qÀñ0ş·ó R* U"JĞ*Ğ*p `­6À{`2Z Q¸EP ‘„DF4T 3°#E 0°&DU° -0†E‹90EUP7A°)A¹7»F 1 7   KXey:`"À†t&emÁ:(‘Éi0)ñaĞ'n iàpñPå ·ôÿßßïÿ[µàÿƒ€ÿsßŸ•	ÿ[ßğ;ßo ßßcß"pß"e ŸZ«•ZyßŠğp@0 Ua/D0Ccğ	dR„gAA  { "Ğ‚eÛ´Fy¦QTdpN‘WŠIĞ"p" 0 ªep6ğR0P!-°ª4ğ 3p 4ğ b2Zb°#70(Ó8ğ7Upf°br 7Ğ}…àD0ÙdeCu°?(mPo`Øyr“¶ \winstor e\licens emanager pb\clipd ocument.@cpp 2  P   **  H`  ¸   ([ >²2Í0Õ  O‘ßí& 0 2 B           
+'  5  D F Ü! €ÑÒ C€qz´J™B€¡ H— Zv@¼(  à ™ $0 db ¢-¬:ŸL4BsPê ¾W i  n d o w €s - A p€ ‚l€
+c a t€
+o€M€d e Šl€S€
+o r€- S RK w¤ yÿ_ÄRJŠà€+2CFÔäM‚*r€s€f€- £3‡"/ O€8e€(‡7a€4™	 T“9  _V «‚C }  ‚Z€>t€/DC€nQ€3e x€S€Mr v‚: : Iµ€`i€i€hlz€:  €:a c Šk@g@F u@(l NÀmÀ  
+=ÀD@l b ¨y LÀb@rÀEÃi@	s .À@o+@ÁAÀcBs ¢_ ‹. 4À5@Š1À0Àx 6À‚_@r z 1@%ªe@tÀyÀ2@
+X0 ,Â&ÁOdÀ$c»ÀGKIÀjC&A	iÀlªLB[eÀ8s@dÀÕÁ-f@)l@eBÁ	«CvEJa@nÀrÄ
+tÀ_uÀ  Wi ndows::S8erv€ÄAÁÇ:: Internal“€CoÀxt	erAitial ize ÿ  \ÕJcÃs€erCĞµ£lÀMÁÏÁÑ ¢²¹ÄÑóCÿÑ×Ñ¬ĞÑ%íh”  `ü  %ÿhÿhàGÿhÿhWçuÿhëhø€‰HähA¯ähks!f%hiàYe H_c¥m«koaG`;tµ ‰s o ánt`ªd(vPàMoà%uà*tàA` y`Xc  ( [ "ô" X] ) Va–v`)k¢
+. ( C V`}eà
+R K mT U  h`E ]Xµà	Fà}2 pa 3 9]Sè[::Get AssociatedBProdu ctsAsync!Â]onec€ÈuaÀp\endu ^ËÈingArt"Ë©cyâbCâbâÂáaábxå`ºäbÁ€ÿbÿËáĞñËàbÑÔÿèË%õË%ÿbÿbÿbÿËk Gÿbi nb£ëbvp1St1õeC hĞaÖBñ](0[pZ+[YZ.°&s0(±ki(0&1Z(-H R ªEĞ/UPdTp0pj€8 0 3 Fğ`ê1 7)_)ÿWÿWñW_*U* a?f€ÿXóXSr'ÑsPƒñ&q'°  »t'ä_'  ±'6PrqJ! }'ÿX  0ş—	'°şDĞCñPù“ÿXó‚«'slpKt'hr ÖLq'H°&(PQUWÃ{V9- > ?WQÎep(	=W( 1y†jKRdP.U,mu03x	o‰²"WrÜ PP±“q.c—U*H’^rÒg°/e ~fòQŠñ‘Q»5J_0‘§ÑuAPd«Ğ‘isĞ£f6)rj&0:sp^NĞ‘ QÛĞ
+ay?¦°6)/ß¦:^__reõ4PğÁ dOperati on::DoWo<rkR6o`o`i`geBt’`list bsPfora¦fpTfpíñoõÒb“B;q:ñ:ÊXpb¼ô:­ ÿ:ÿ:‡ÈÈb ò ÿ:ÿ:  ”  ÿ•	ÿ:ÿ:ÿ:ğÿ:ÿ:ÿ:}ÈtĞËÈõ5Èb Ô pbFô:cÿ:c5ñÈsp'lp»&ceÿ÷\[&Ï%!\Ï%Ï%Ï%¼reÏ%pŒÅ%{%cr%—ñ$q%qˆ½t%ê¿%O%%%% ¹ ş€%s%•	%%%u%Îµ@ o n M Pd  e l - S4 t hr hXD  K w¤yÿ_Ä RJŠà+2CF ÔäM i c *r ”s f ^- "W &n d w ‚s
+Š/ O p š¨r a Ri Bn  l ™	T “9      ø  H     AS¨: : ›e wv^e g¯Cit­ yx wG t ]ªs 9o Ái‘e€ZE‡yP‚kd u€t€A€y€c (P [ "€p€fl‚@‡g" ] ) ¢ €
+n v€;k€4d .€( C V€\[R€¥m UA€h I E€Xµ€'F€'2€5€"   Window s::Servi„cetore Context ::GetAss ociatedSProduct sAsync ÿ!  onec ua p\enduse@r\wins\‚l€-nsing¤rtÀb\BcC€.cpp C@g À3Àq  **  xÀ¾  —É²2Í0Õ€tO‘ßíj&   sÁ   tÁ    ‚À   @"Â  
+  h ‚D@ÁFÀ! Ñ°ÔÀ‚€E z´J™B¡ H— ZvA¼(   à   E& –€—@db¢- ¬:ŸL4BsP–ê€1Í«A@ap ÍukÿÅıÅv AS€>ÁÅÂ@”h k BÅÀ™o@,( _À.Aã«E­G³IÀ¶.ÀšsÀ 
+aB7dÀ±) , ª À(@ÜRÀ¡S`RL T`O0 x  8 0 3 F ˆ6 1 7 Là) (·RIàQrna&lëSWer¹T a?€*NÀSveréâNS` `à‰áMAáN°  ¿äNKÎÿNÿNáSñNJïN%íN”  (	ç'ÿN 2o ã¤ÿN§9³ÿ±ÿ±e ÿ±ÁflÀyªKäNhêNH ¤( ¢«¥®ë¬S …r` e - > ®e m®j( Spàoà$ã°KÕ"«d .$
+( R¡Xªm`¸x bo ¶nà¼jPâP g !c« ¥H Èt i ºhg R f` aİnİà½ebc-+J`!æµ¡2r¢g`·¥d c¡	!ÌO fâ	a&µ`ts tN ¡ÑQ u!$ypã) yÀ·¾P agedOper ation::DàoWork¢lßÀk`get’`listAsfora¦fpµTfpñoõR;“B;ƒq:ñ:X  Àô:d%Ğÿ:  bb7c1 brdqbò ‡ÿ:ÿ:  0—	ÿÿ:bsHpÿ:ÿ“•1ÿ:ö+ÿ“P"tpbUÿ:Qÿ“  pbFô:cÿ: hP/“u lÿP2ÿ\Y†&u…Ï%!\Ï%¯?†9†Ï%Ï%s{%cr%—ñ$q%qˆÁt%*Ó%O%3ˆÿ‡%  ù‡¬Áğ‡ÑÒø‡ÿ%s%•	%%%pHw¥ïÿ‡ÑE%%o%K‘ÿ%÷1‚¹¹ñSµ¾S·ûÑL¹oR'uûb±/?b	¹÷`sp³s ¿¹¹¹¹¹}¹7?Y¿¹¹¹¹¹¹i¹Au¹b 4 2y¹Âùt1úÛ111¹ÿ‘ÿ‘¾ÿV}1u¹•	11ÿ11°tÿêÿêÿêÿV1ÿñ,1÷ê¹¹¹50¹õ¹E°ŠUĞ·¹¹ßâÑâ¹qã|¹Çµ ciatedSt oreProdu cts a?€\sconte xtserver .cpp S  D K wx   **  °0  Ã   2¦à ²2Í0Õ  O‘ßí
+& 0 2  !        Š  
+'ˆ  5  D F J! ÀÑÔ C€qz´J™B¡@ H— Zv”   ”™ 0 db¢ -¬:ŸL4BsPê _W i n  d o w s@ - A p€ lA€
+c a t€o€M€d e lE€S€
+o r€- S R€‡¤yÿ_ ÄRJŠà+2CPFÔäM‚r€se€f€- 3‡"/´ O€8e€(‡7a€4 ™	T“9T  _l «K }  h‚ CQ€k H€(€]t+€5JC€n€9e Šx€S€Sr v‚ - > G€t€rbs€o c@*Ae«@@G$P@o@uÀbtÀ	(  @(Á3d ÃKÀAMs .AD( ) ,À	mµ@Mx@&o@
+A!PBÚP@g@Ac@#EH@Pt@Á`g R-@fÀ A1nÀe «AMpJ'JÂ1nÊUEAÀ0d@eÀs@YfÂÁ & _ÀØp N@AIQ@+A`
+yĞb)@6  Wi ndows::S1€ÄiceAÊ::€GetAssoĞÓ PagedOpe ration::@DoWorkBÙonec@Şuap\enduÀÙ\win‚Ş\l€nsi$ngrtÀb\getlistA@sforapµÄïpÁoÅBí“B¾ƒÁéÁëX  ÄÄë<+âÿuÿuázñuò çïu%ñu(	'ÿuà:¿ÿuÿuÿuç‚ÿuëu€–ªFäucğuhäRu }şt?L4LŸKŸKŸK‚ÃëJ®câJáIáJ ©ÅäJåÿJÿJõJ¬!À ÑÒèÀ%ÿõJ%ÿJÿJ`«ÿJÿJÿJVi¢¸ïÀøàJHäJAcäJkË: : ¡¡™võ ´c œs a%Ä#¿ÿb‘P±?b?b=bAğTŠyrc0V[ "tQò" ]°. ÒcvUkĞ	d0d PC, Vp
+qR0†m ‚UP h I EĞjXğF0h2°1 9w3:YbC3ŒZAÀsync ÿ  YßY	YÒXT’’VC°U@1]qseñ0q1q’Æt1nrí1  ÿ‘±1ÿ‘ÛĞ’ÿ‘ò“ñ‘p1ı‘}1¼(  à ü  •	1ÿ‘°ÿ‘Q!¯s*ÿ‘1|ÿ‘+ÿ‘ ÿ‘»q˜ÿVr0„õ˜1vp1ZSt1t1ó‘B°o´ l&_\Œ7I?Ú.°&s0(±iğ *(H°‰EP5U (L T°'0°•8  0 3 F 6 Z1 7Ÿ‚vZ)Iá0µrnal@„¡ƒô)ù…er_*¹ ƒ¹t¹*iğ’ry¹Çt'õòŸ''¹¹~ ¹ €ÿX  0ü  •	'''p'ÿ¹rÊ¹Q0¹õ„'['¹ Ì¹r#sÿ0¸ÓÂ¹¹QT±	¹ñ4ÿ¹¹ÓÌ¹¹‘V¹³_ß¹¹¹Â¹g°[•eîdğ5QÈO@µ6¹Rubr ¹nP8)ûğV¹:Â_ÿ4÷4¹¹{¹¹i¯“¹põ¹ å¹Èô:„ôÿ:ÿ:ÿ:ÿ:ÿ: w¹ˆ¶   €„ô ²2Í0Õz´ J™B¡ H— ZvÈ”  ”   È ¤	À db¢- ¬:ŸL4BsP ê  W i  n d o w €s - A p ‚l *c a t 
+o >M >d e Šl BS o r  - S D K  w¤yÿ_ÄRJ Šà+2CFÔäªM=r 3s f /F-gE/ O qe Qoa i™@	T“9  ¾  F ú  c‚ C hĞ k H€(€Hˆs u€t )€t Windows: :Servicetore::G etAssoci atedS	Pr oductsOp eration: :DoWork  a?€onec uap\end user\wins\l€,nsi$ng	rt€b\getlistA€sfora†7p…5o5.cpp i	€X X Ø**  J ÌÉ„Ş6÷ƒò  O‘ßí&@	€  E CÄ    À   E@Â  
+Â	¬ €lÂF@ ®! Ñ¼ÒÇ•EÕ•E& ÿ•×ÿ•Í¯í•ú AH€OÁ•ŠAÂÌª: :À¹je@™vÂµeÀÉÃtW@·AKC@nÀ¼e¬ x@ÁGÀÊt@Öªs@o€ziBÖe@İUG+PÀo@uÀtÀ	AÀ y@Şc ( [ "Ôå" ]E`] àn vàkA d .   C, V áR`tm ‚U  h I E jXà	F n2`a 1 1|fÂdContext9hAsynxc ÿ  ¿f«fBfc#bbCà\ Vb 7+áaábx Êäbõÿ/ÿbÿbahñbàb8ÑÔèb%íb¼(À  à   %ÿbà<ÿ­ÿ­ÿ­çºÿbë­vµàbSäbäbã­BàLho l L_ H¡¼d­ ®c`]gI .`MVs`Pa¹ià( L,ª !S(`¶RàPS`R(L Tà0`e8 (0 3`¼6`Q0 X7 Làû¸I Qrxnal@¼a±¤SÁ½e6ryT‚º\éM@ºveòr¢NS‚¤âŠáMáNŠ°à±ËäN³¢îïÿ±€Uÿ±€D@-áµá±pJ! íN%ñ±(ø	  •	'~°~ï~~~~tĞÿXURµ~npPl@my~l`nÚKt'hz's~sp&Ó‡5{VSOr0PñN- ¼> ?WQ?W9W(Ğ)ªpzXK’Ud°X.ÕU,m°xˆo°/Ñ^jPòPPg q.ckĞUHdt±–g´ Rf0 ±cnğ^ze°4)X3›JW0‘˜16rR	gA­Ğ5dĞ‘isĞ”fò1& _pp NÛĞÑhQĞ
+y?—ß6_“_“R“Paged¿¯“¯“¯“¯“¯“®“pñ½û““B;q:ñ:q”Ìô:ä±ÿ:  ÿ“±bÿ“Î<ÿ“÷“ò ÿ:ÿ:  0  •	ÿÿ:ÿ:ÿ:ğ"ÿ:ÿ:ÿ:ÿ:ÿÿ:½ÿ:÷¹¹¹q)_¹¹¹¹¹e¹rze¹i¹¹ À¹ Åz¹Ít%Nx´`%Z }% ¹t¹.x`Çğ‡AA’- »€±ìÁ$€M+ ˆPÊp  ÕX  h#ü  •	%x%¿Ù¿Ùw| ó7*œıå®\ ¼ÑCÚşîğßß×__€ØˆÅe¡  >_ê^IÔ^IP¯³¬ÓRT  ÓèepspL ® ±W‘‘Vr0[bP5Ñêu°Neğ ûs Ú/eYÑsğqWªqPi2S 06n2ªnÒc°äeP6kĞ³¨  P‰N0DP l b yp‰ap ×1hq1q ipsĞX7jAğcRsX¶4Qğ5 2°.p_Qğ6 4°_0zUPtĞb°mtb­p2P\Briğ±p—Ÿµ  i c y    F l a g s X0 x 4  B   Inv okeLicen seManage rRequire d onecor euap\end user\win¤st &\ldmd \apiseth ost\acti@vation(.@cpp $ j  o  ** € €  Î   ´2Í0Õ  OP‘ßí&      A    4   	 "
+'    ".   ğ  9! ATA‚@  €…8± ìÁ$M+ ˆPÊ€Õ$ h \‡L €H(E+M‚£r o€Ÿo  f t - WQ€	n d€	w€
+- S€
+o r e  ó7*œıå® \¼ÑCÚşî‚ğ«/ O p€"Šr€×t€1o n€l €ØÅe¢  Œ  ¼ s ŒV;€ƒS‚v€c€B€g€n A±Àq uÀA&LÀÁn@,e I mA@l   D@1lÔ b@ŠLÀb@CõÁ3iÀs€UÇÁA¢s@_ 2À4À Š5@1À0 _À—
+6@˜_@r z ª1@Fe@tÀyÀ¢2@
+0 +À&pÀ@  ServÀ“BÀeginAcBŸ„¤Implé¡libN\À©ABpoq@:d =ÁÁŸÁ¡Ï1ÄŸ|½ÿŸ€b ºĞŸÇĞŸEÅŸ”ÄŸ X  h#  E& Á. €db¢-¬:ŸÀL4BsPê€Ñÿ£>c U¿YaFÿQ f >UÀe`QIäQI VvÕàHk Nnà àa‘Šeàs J  m MU![g r`Pbà c`ubSís / ¾eà¡¡˜a'[ `ªnbnà  ^hâ	¨k :`PÀNà [gXÿ\ybgÿ\4 \_k )õ\,àBâá ô P lâpÿ²ÿ²ÿ²ı²gé²Ğäbm½ÿÿb@=a³ÿ²Yı²%íb¿å²%ÿ²"Nÿ²ÿ²s ¼ÿ§ºÿ`á`ÿ²ÿ²ÿ²ÿ²ÿ²ÿÿ*YYsY(!…õ·Y!!ğ#°SuY€MÂÑô'­›jeïÿ'Áp1 àsY¬ €ı'8P	Œ€•	ö'ÁXs?0A_…ÿ'}Xn ÿXQM3€XXy[XXYXc Xÿ†tPrõĞ;e`.8‰ÿ†ÿ†ÿ†*bĞ†tbĞ†2 ô0 Xoòbÿ±ÿ±Xsÿ±ÿ±seÿ±ÿ±õ±bƒñ/ñ‰ø  Òt0äA­0  ¡'ÿ±Xë0û±´ÿ‰€Xó±ÿ•	X…°~Xÿ±_4_4×Xÿ±ù±0ğˆ& Fÿ±±/Pğx1)Ñe Rcğ±•¼n NP(q·fÏ(ñˆ5¸_Yy _„ß²¿ß+ß+ß+İ+Õ²Q,s	ªdpSği10 50 2 ‘ 7 6 5U0 10 7¸01Uğ/8P5003p6p -Ğ3ğ9 7T 3ğ 8p8²0Ğ 2ÀY4¹Pack@áRundown€NotificÒİŸ/`/`/`e¢¹-	"`2 Cñ.q/à ä Ót/¯//áeÁÑ Ò ÿ_÷_  ! BK1uá  €/  ü´—	///0/////ñ0ş·pó  Ã!òa?J€u X¶    ­ 6  ´ P 2 5 E (4  B D - 4@ 3 C E $0 <D ,- dE 6 9 LE 2A F A j7 VF 1 7   Key :Unregis tered K  e y : V  a l i d  à  ** d è Ô  ‡ < ¯jeÍ0Õ  O‘ßí&   A ²         	 
+'ˆ    .   ª ¥  ! BL# r  €…8±ì Á$M+ ”PÂÊ€Õ$Œ…LV €H+M cc@ r o s€fT t€ˆW€	n noD w€
+- S€
+o€e ó7*œı å®\¼ÑCÚşîğ«/ O *p ¡r Ÿt€1o n¤)Ê³ÿà½)  €K…õë yJ{ˆïÂÅzI@vÂgÿ‚Å‚ -À-tÁwÅyÕÄy>°ÿy×y¢ÁyBKÈyEÕyE&ÿyÿy@iÀ•Åyñ0ş·óûËyÁw ÂÁzÿñÿxèxƒÍE O= P uå<   Öä<Ck|Kwÿyczÿy êyÇ ! AA±å< €%í<8 ü<('æ<‹?rÿy¿£÷y€ØÅe¢    >Àà;I` ázƒ.o k¢Œ¨g  B©càkn Zeàm x!Fg`rÕàbà c`uäA¯Qçs / eàsàsàrà q u[à! âOanà P c hà cà:U`PÀ©Nà D lÔ bÀ»L 	b £”µ!iàsÀ5gA U!s _àÆ.àÆ.âÎ1à0 _ xU Ë4à _à¦z ÊtU`b at b 2P 0 ,àBâiUà	  Ood!y FQ`a g  `x B FInvok eLicense ManagerRequiáÓone coreuap\ enduser\ winst`\lCmC\apis ethost\a ctivation.cpp $]¢ÊCá_á!N×ä`âŞyÿ`ÿÚaàñÚöğ`%ßõ•	ÿN°md°mÛm_qiĞeßeğ'm©‚y0rp0&00Š;t0S!r vP*‘$Pp 1)e RcĞ+xn NñrfE²a6UI mğtl­°"Dß+tPr0ze0$.Ñ%.ß+4§P+Q“ß+r ß+2ğ+h0 +Ğu‘	m«Ò-qCkR0ğ“f+ª30188,9Z90—a²1Q 7p/1Ur0sp
+d •Sğ‡1U0 50 2p3-6UP6° 6° 4-Q° 2 8P5Ğ 3UĞ6T309P3Uğ 8p8P1° 0  ServP0Pack`3Run downNotificò/Impl O4O4D4lib\'@6Ab3-	q] -ƒñ2q3ˆ  Øt3à+E´Îÿ  ÿ 'ÿcSÿ  õ C7ÿcu3´ô Ñ	Ì—	ÿc3Ÿ/0ÿ ßg-¾ ß¤s)3÷ y3ºğŸuùcS’cp/ñ8ÿc ÕP1ağ
+a°SeP
+Y^Õÿ	.ü	.PXhp31
+Vsğ[qZ10+.0'9½$4p ± 1)‘%.0UÙ^80³e
+y°d3•0´8p b2  ¿[s¿[¿[re¿[¿[·[W/²[Rñ'u(Ùt(şXù(  É1\(({É™( €(  q(ÿ•	(Ğÿ[X((ÏWÍŒõª( uŒ(—{‰(~FĞ\  ÿ	u(PpŠo°^1†0k((5p0^‡(b}(wĞY(?„?„?„r_?„:„s(Ò¿u(˜ğPÚñt(¶ÿP(2ò(w(:¶@    .     F 8C! A0Al `€ ¶Î0Õ± ìÁ$M+  ´ÅÉ ÕX   $$  Ú IV d b¢-¬:ŸL4 BsPê  M  i c r o s f t -D W n d wQ - S o #e  ó7*œıå® \¼ÑCÚşîğ+=/ O p *e Ia Qi _n  a l €Ø€Åe   ¡‚º w  I€¨ €>k€Gp€€i n g  €Ye€s€&  m«€"$g‚-:€P šN€O.Œn. P h€Dt€s _  2 0 1 9Ä .‚0 4€¨6 5€0€0€(x 6€_€8 w€:k y b *3€™8€b‚	   InvokeLi censeMan agerRequire ®neco reuap\en duser\wiHnst€	\lƒmƒ\apiset host\act€ivation@.cpp WB„&@jc˜  **(   vÛDLDhA‰ ZOP‘ßí&@	 Zc€[Á  €ZÁ  µ€[À €—c@šÀ
+€dÓ¥ÇÏ¥ƒEÃ¥ ¶ÜÊÊ¥íE& ÿ¥AmrÀ_ÿ¥ß¥Ö> PÉ¥IÀŸv@A§á¥ @†eÀÚa u‰Àje Í±s /@¶¶eÀ²¡Zsà!q ªibo `nb_n 
+  	hà c k )^D l y Lµ 	b rà ã$iàÖs XgA c¢c_ª. Z. ]2`]. aD_ ']r z tU b wt"^2âe,U`B sàtc`P«baty F`aàvÅ!0à	4 B€Oc×cÀi|c$bcbáaáb €  Üäb¦`—ÿbÿbágğµ9ïbS%íb$`·' ó M $ ÁÀ?¬ÿ³¿»W£»ÿ³á³¼€ †;«` ã³eàSvb?e`;^e`=!µaK§WLänÑb_I mà¹l CgQÿUy ÿUÿU0 +àáÉ  Serv`­BeginAc"³ÄµImpl oÃ´e´lib\`¸¡	é¢²A8 £ÍáNáOŠ¨àOİäO0ÿ²Ï YA1  Yõ‚úSÿ'€ÿ'ó'•	Y×ÿ‚>ÿ‚oposğƒÿ‚ÿ‚ßßÿ(ÿ‚  ¢õğ(A€M0 a™&ƒşpĞI‘RqH‘W_'_R7Õ_'4PT5°O1p û€_RbpQ…  (‚B)`!OneSq~App~Ò|K‚::G„et$ForI` alledPac~k@„)¿ƒy)`,r…a¯òÁˆÔ’*p‚*s`Vmñ)q*Hp*Şt*œò=*  ÿƒ*Á1 Í*ğ…s­ó Rÿ*s*•	***­mÿƒÑkS_±1z** qğN %0*uS* ["Q%ExQrD°440#C E 0 DU C Bğ 60ª-p E°LF0 2 7‘°{F 1p 7 ±&õQ+tPWvğQ'-&ô  ContentW°ithI_©_©e™%Õy$Qr$%0Cñ#q$Êhp$ßt$Ô?$$·³¨¨$  7w$ÿNş€$s$•	$$$ß$$ÿÑĞßÕtĞ$«ÿÑóÑ ğNp$>0 ]a0pš3 Q›2ğ"6Uğ D 4PĞ0Ò¡Kk°	±˜MrPhP!3¤fÛ’±¤oĞ¬±n°ñ¤>2R Ÿ(Ÿ(Ÿ(™(   KeyMachiğne::· ?L?L™&°keymSBK_Â&+ñ%q&°`àt&Š@&&&ÿÎ jAğJBKuø Œ €&  \“•	p“~÷2¶  d o w s@ - S t °r  e ó7*œı å®\¼ÑCÚş îğM i cT r ts f œ- W Lnô/ OD p Šr a Ri bn l ñ 0ş·ó         
+     ¸£6   \  R 7o ?M ;c hme 7Root:€Connect$h: Vbi  #    t°   **  à á  W AAhÎ0 Õ O‘¨ßí& € Gq  GRp  €V 
+ U  €
+  .€  F€ ! `BK 9  €…8±ìÁ$M@+ ¶ÜÊ€ÕØ$t…L €Hî+«¸é×J€9ÁkÁm­Æk2 5 2 E@4 B ‚DÀ“4 3 C@¨- 0ÀDÀ-@ E 6 9@E@ŠA MA@7 4@1 7@   Ke y:Activate K ’y :P I n€€tÀ aÄ lI \ÁuÁwj€@pâÄwµÿwØw< ! AAñÅw €EÕwE&ÿwÿãÌã€ØÅe¢  _  Àà: _6>` Á\0 6c 2 ª1`43à6Aà81b5Š0@2  9e g@2¨n L  c@5n ‰ebo€ àA,  Uà@a ‰h dàeu ws`O@=`v Œu‹ áRà q u Åa’S r väÇ}qgŒ  f‚€¡	¢HM achine:: DoBeginL icense o`‡oreuap\ enduser\ winst`\lAcmanagàl€ib\keym#	€.cpp &ÂOX8 1áNáOàOãyäO%Bÿ‹ÿ‹áñ‹Ááá‹BLè‹%õO¿%ÿO`+3ºÿ‹ÿÁe ;íÁ)Ê³ÿ½)ïÁ¾0`QáŒé‹åNàC®g`ÆC„¡ n`SUÀ†jl aâRd 7ÿ”C “B “ı”  %àbXC má?á@ø€¾ä½ä@>ÿ@ÿÌÀ óÌ¶ğÌÿ%õ@%ÿ@ pştU…wuf·± ffE°f-pôE f7 f€Ko$·o$a$ğ%ñqğ?úåtOĞÿ…ÿ…AWK1 õ…ÿ… ;ÿg€}8pJŒ  Y•	 a—À6°d b¢-¬:ŸL4ğBsPê€ÿ†=ÿ¡¿ÿ¡ÿ¡ß¥ u ùh²À/Š°hIôhS kp)Šp¥i0=g  `€Q©eĞ _  mĞ_U‘gğ>r2hPP…NDğ+l b yµğfap o´Hq iĞ¶s@œ7AĞi±ls0Cª_>.o.Ò1p 0 _ x°p4p ª_pzĞqt0b°uŠtb2 00@InvokeDgMeRequire@·?h?h3hapis ethost\a±c‘ionAâhW’¦R¶q(ñ(Ø  æÑô(…¾"ÿ® ÿ(ÿ(ëÿ(ÿ®…ÿ(€Hó®ÿ•	ÿ(ÿ(p%%ÿiÿÊ¯IIıiù(êğ(9°(ú?ô(C°	Ñ!Ç±mU)› €«D({ 8µĞBP F°!I-ğ ¶D%‘²1ğ$M-±ªAğ8°LDp$0°%Wñ²ñKñ³8P(}Ğfµ°rp c2Ñ'nĞ'·µnŸ¸-Ÿ¸PR2ğ·—¸.Ğ..p,ClipSÀ‘ ‘::GetpSDocume ntFor Øt  WithIdAn dMinQual¸ity––y–cpWA˜p’-À° fƒñ,q-P  çt-~é-Ğ---- ı-€-s-•	--ÿP-------v¿‚·  Š    @ 0  D  e c o d  i n g :    { " l \g a ly P r„u 4t IE V" N" 0 e 2 6 .0 3À - 1 4 
+4 *b&b 5 V7 ’:8 7 'f b7 m}    DecodeC ustomPol@icy on r euap\end user\win  re\  ens@emanag l ib\clipd ocument.cpp j W P  ** 	  è   €¿"h Î0Õ €O‘ßí& ¢€  ‘ *„  “€ €š 
+‚& §  .€  F€©! €AA
+  €…8±ìÁ$€M+ ¶ÜÊ€ Õ$  \‘‡L ‚  db¢-¬:ŸL 4BsPê _M€ÒŠc‚Æs€Èf t€¹ŠW‚Üd€w s€
+S€
+o€e ó7 *œıå®\¼Ñ@CÚşîğ«/P O p@rÀntÀoÀ‡aÀ…€@ØÅe  J Ô  P9 J?À EjAÀ‚c@p@!C”  kÀy   wÑ@t h@L@A	jn@,eÀIÀ¡Á8@…B 8 Q0 EÔ A@33@4À Aª6À5À9@0@	¢-À2 0@‘E@›"A@D CÀ5 ª}Àf@DrÀCÀjn@#eÀ/tÀÃ2E@¥2Â4 BÂ4UÀC@-@D@CE@BÀ6 9@E«@AAÂ¯4À1@µ¢7À( f@3r@2UAmBKc@9)ÀoC!@¤Stor€¨::€GetKeyD¨€ForCont€ª WithIdAn dMinQual¼itr¾ÅÀ¾ßÀ¨  ÀdIÀ Ã¿ €  éä_•ÿ_î ÿ_aeñ_/ğ_%õ_ÿ%ÿ_ÿ_"?ÿ_»gÿ_ v, ”À}é_R`]t zu`n B!ªç_atcm`m`!R  G!u «`f¡ktäiàª àL:5` EàT?T9T  ß¿P¿Pÿ¯ã¯©P£ŸáN•á¯@àOêäOÃÿ¯ËÿOáOğ¯ÿ ï¯%›õO%  š¡g  ©?¦- ÿ­o`ƒo`=kÿMÿ­nàM/`zå­Gí`Fth­áöaà¡ª% ¿N¿N7ğLic…AwMCwCorebM ExistingàLease€Ldÿ{·ÿ{ù{´ c`RLŸò#fq#ñ#0  ëÑô##ÿ{ ÿ{1$Ëÿ{ÿ{ ú{Şÿ#ÿ#ó{•	ÿKÿ{ğIÿ{oğqÿ{ÿ{±˜ßßÿKnÍ°ilàù{hÿ ÿ º"–It’¡L· ePxVc°J|f° -fµpLf°s3°/1Ÿ-Ğ¡ª4Psc060ağMV001|6Pw8°{"ì ,ğ ³zip-ñ,ÕÖSğ‘ˆs²cR/qS»Ó¨‘¬v0Wq…Sip0ZO°f0±ˆe:µPr0Xer×2EĞ_ó2ñ“1]f]eÕğhP‘n2?a‘^®pP1·Ui²"p€Ñ9p: / l
+‘ó‘. mkpQ p@(mò9.UÒam°v°.p/òq
+ó“s°? bU2eğii°rT yÒº=sğ hU&%PaĞ’7p5«ğq”6° 6°2pqñ»7 &2W“q=«ĞieĞ4ĞdP÷1“q1“dP‘q3“Úe	ağq7°q!º7p&’
+‘ß$=°Ú1Ğ5° q#1P1jdp-°fğ14Õğ7p-°f°1$mÑ	0ğ 180±˜rQÒ§t =N0pc°73y TğW=¹Ğe »#3«qs’V[P ±-bp	f0eÛ0ñdp‘1p‘ª-Ğ¢ağ8pdò-Z16ĞÑ0cĞ5Õ]Ò'k°nPS&«{ª,ppcaÙûÑ'‘[òÙ›q
+53Ñ¨Şe(S³_?eğ	ñÛŞd2?=ÿeö“bm0.i xĞÑ0p×Qå3ãAPd’3Õ[Q³9 N2ª6PFĞ60PW°µSsu’-Ó0°Z10 "p¿uo02lµpÂtğ:0 ñ!1’¼[ñÂÑÄ1ğÑ":0Uğì30.°-50 2u70 +´³roĞ¿@¹@Fvğ±Áiõp'n²7P
+ßîßîßîcßîßî ôqrñr`%ğ–ìôr órV¶  O‘ ßí&            Ñ   | $ˆ 
+œ  *  .   F ! `AA6 p€  #hÎ0Õ ±ìÁ$M+ ¶ÜÊ Õ$   \  ì “ €-3  db¢-¬:ŸL 4BsPê   M i c r o s f t ˆ- W n d ¢w - S o # e ó7*œıå ®\¼ÑCÚşîğ+=/ O pT e€$a€(i€/n a l —€ØÅe  ”  ~µ w- ”?€‹A€D¢d‚Hg  €e€s€"  { D  0 5 3 C ŠE€D€]8 8€Š1€6€5 6€¨D B ¢9€2€*5€D€E€5 ¢4€F }€,t€G¢ ‚rs u€3t€}   ClipSt orage::G etLeaseD ocuments@ForKey  onecoreu ap\endus€er\wins€ e\licensPeman€r€b\cÀ .cpp Ãv `€  **  €ÀºíDqÄD{ÿ—Ñ—-Ğ—·EÕ—E& ÿ—Á^rÀt«ÿ—ß—Ì—RÀt@|Èr nF™1 KšÁÂªcÀmÀ
+nÀ®sÀjfÀ‹rÀcÀÁeUÀt@d`2 R2k KáKB T-àL£T-ÕâTD`T-àOEàSáR
+E`A`TA 2 ¢7`F 1à 7àuWÿOÿOÿOeâOÙâOœláNáO p îäOlü!£ÿOÀù›ğ›º ! BÄKå›  €%õOÍ%  ®@ Á¦?’ÿ™¿¡£¡÷™ñ0ş·pó  ¯A!á˜JàN *0à ­\6à$Á´EC —B D6 {E@‘:@L%ãŒD`‘ KÀUy è: Nà gÀTÁSC¯ n g U Vl ºa e€¬a(à£w@Ë@å?ïä?(Šÿ?ÿÛaáñ?½á?BLÿè?%õ?%ÿ?âzÿÙÿÙs 1§á÷?)Ê³ÿì½)ûq°q ùİOin¡Od0õªVPlòF PC50 ÚEPG4PEqp4TqÿF­?$4GõF Ğnq?•ñè Ağô­‹ÿ×ÿÿA}€}PóÑÿ ¢ÿ?€ÿÿó•	ÿP|ÿŒÿÿŒßCëßÿrôo 5óŒÿ?ô q1 ÿ?¿šE°&0°c¿bE ¿b±bñ?Regist erCallbaück6@é"P$òñqêPğ>ñtáĞ¬W±>¬N¬ u¬ †€  ´|  •	†¬@N¬on ¬¬_°iğ_#eF ?¬  Š°>íğ@0 aD5±‚µ¬T: ¬"­g$cP y P’+d†cUP†I@Y"à["0ƒdUĞ2Ğ‚c° 3!1P‚20>‘…6 b’ ªbğ?7-Ğƒ4\Q±„1 f°bfE…"®  DPªdˆeCu°§mPo€©nyŸ«Ÿ««dD°¢ƒ2¹ %  q$ñ$¡$òô$|÷ŒCCCC«ø MÑÿ$ó$•	ÿÿ$ÿ$ÿ$0ÿ$«_Õ_ÕGU¯ÿ$ÿ$  Òğ$m°$=ô$q«a°Û‘bvÕĞ!L°`cp nà|‘+g µÌÑ&0 xµĞ#0:  ğ!ÑŒ Fªo°(bP(L0$b«sMÑips éDPªlĞ&yHc°e°¨s _°g.ğ(.ğ'ª2&._°60¢_Ğr zPt0ªbP-tb2P*,007*mp   LogReactHiveSŒin s<ul€ŸÕŸÕ—Õte€lemetryÂ)fÍ`lğ)– !)ñ)  óô)´N8Rô­ûÿNÿN}·   .    F pÇ!  AA   €´N8h Î0Õ±ìÁ$€M+ ÄÜÊ  ÕX  $$   ó V	 db¢- ¬:ŸL4BsP ê  M i €c r o s €f t - W &(n d w - 
+S o #e ó7 *œıå®\¼Ñ@CÚşîğ+=/@ O p e Ia Qi _n a l  €ØÅe   ¡>@   I€D €n v€k1‚Jg  €Ye jn€Ne€m€"$gQ‚-  b€c€	u5„l€c€	ƒs ª/€ e€s€	s€br€q u€ «‚Kn€ €h€ c k :€P Ç*N€D€l€4y ªL€$b€r€t‚Úi€s ß‡A€"@¢s€H_ 2€4€
+5€1€0 _  x 6 4€_€¨z 1€e@tÀŠyÀ2@
+0 ,ÀŠB@sÂ3  P@Ã6y@F@5a g@  0À4 B@SInvokeL icenseMa nagerRequire xnec oreuap\e nduser\winstÀ\lƒmƒ\apise thost\ac tivation.cpp $B¥¬ ”**  €  ôDŸgUC©€uO‘ßíj&@€&€{Á  €zÁ    âÀ  ÀÁ  
+@À  v@ËÅ9ĞÅEÍÅ$   ´G& @$½ÿÁgÑãÁ¼€Z #;` Á S Jr+ ac_B gà@n aK§WLbCecI mA nl   DbEb¾ ÿUaa
+ÿUıU+`pà  ServàIBeginAc¢ODRImpl oÃÿPåPlib\àT¡	ù"OA8áv *áNáOŠÈ LõäO.B¢¤×ÿO€èO Sb åOZäOD 3å²`âOÑ0ÒÀ4A €%«KÏ[`„ Bª¯ğ¬!P@  d  % ëù²m°Aà(p |¡?§§êM :d Al ¶§´!¶ D K w¤yÿ _ÄRJŠà+2pCFÔä\!c˜e ¤µµ™	T“9T  ÁÊº€!:"Tm =&k:à¦kWs] :¨Ê#åC`nÕâŸx  Fàcà áÏ*yâGàtàYe 
+f`u`"t ( X)  ¢a#Åe ×.A ( C V D$ q`L #«g ¨h Eà#q`­/ aµ2   WinÀdows::V!¡¡ Á ContextF  ory: :GetDefa`ult ÿ  ßXiäng!¬rtÀ«àXa
+–cc
+‚Y;H áWáXà`Uöt,±G=, T}T,T  ™ ! BâKõ…  €},qTş\z•	Tpÿ„ÿ„ÿ„*ßˆw.Tõ„ñ0ş¸·ó*!eñSJ*
+*p ­6  a2 qxEP sD44 3UP!E 0p&D° -U°tEz90E°#AP€A0y70{F 1 7   KeyV: "ÀLtĞ%e°V:ûĞ'iğ(´ñmqñJP ÷ôJ
+ÿ ¿ÿ²ryrÿuJù£ rJÿû£ÿsr•	Jÿ£0;¹ÿ£o ÿ£ÿ£si»ß"IopÑû£ŠğZp@0 qDğBcğ	dòAgĞ@  {T "pCeĞ’a™y[”°d0 ±FIĞ"­p"p”ÑU2c° ª3Ğ12ğ!-p V6™1b°#7°H-Q 4 8r!1ĞI3«ğq 7Ğ}àDĞ–deCu –mPo –yŸo˜™ocli pdocumen:tC2R%q$ñ$HÈ  øô$´$ÿ$ÿ$o³—ÿ$op™óÈÜÏò${oı$<po°—ÿ•	ÿ$ø$o„S®ooïoo?Îoe0L÷S&yoVÀ£C& ¿”&—I;lÕo1±nIp+Úiğhi0#‘z*±ÅÖpğ qÆap)eF±m(l NPm  |= œqqq
+q ÇA×ÇÇ,_ÇrÔqÇıqÇp2]2—±2“	QviĞÇ¨d0q±zl½ĞeRÌq•aÒ9ëÓtğuP?y7yÂIĞxrnalÛy¡{ er::Init@ializeÂy\çbÍÔv¤er41çtŸ—ñ3q4qÌùt4*444Yÿ£ ¬4€                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         1b-tÒ\"             	   ´  |Æ ¨   Z¾µ   Zã‰   [Ø   [6Ô   [w»   [²Ñ’   [íê   \=Š   \F   \²Ö   \êÿ	   ]6   ]QD   ]ƒ­   ]¸7   ^›   ^M,   ^wS   ^›_   ^ç×   _ó   _1Ñ   _Pô   _ŠØ   _¡   _­S	   _ö¸   `<õ   `]ö   `ƒ-   `¢`   `Ês   `ğ#   a>/
+   aO   aeÕ   a¡û^   aÓ8   b$÷   bOø   b€ö   bÁÒ   c½   c5ˆ   cW   c{   c®Ç   dT   d@C   dw¢   d˜d   dì“   eï   eP   e¦ü   eş¦ù   f$û   fyx   f¥˜   fî&   g#¶£   gIÿ   gm™   g¤9   gÒ   h
+Èı   h2³   hkL   h L   hÓï   hÿú   i<U   i?Ì   ivD   iº:   i÷µ   j<š   j„ 
+   j¾H   jıW   kÌ   k0Í   ke¡   k{ñ   k¹Ù   l“   l/	   lMÙ   le   l{‚÷   l‚Í   lÒB   mÅ	   mJ°£   m‘5   m½÷   mîJ   nş   nNJ   n~ô   n©    nìğ   o14
+   oˆî
+   o¾ü   p”   p"D   pLz   p†E   pµµ   pğ…   q36   qw;   qŒğ   qÂ!   rK   rJL   rpF   r&	   rá˜	   s&”   so]
+   sÂ•   t–   tVï
+   t¨C   tÂ¯Â   tö$   uNy   u˜¾   u¼Î   uøë   v'³   vMK   vuÖ   v‘   vìš	   w2   wAL   wM   wß¸   wõÎ   x3   xBß   x–ø   xÀ›   y¹   y2Ú   yjì   y~
+   y¢6   y¾¨   yâÛ   z^
+   z;   zVØ   r­é    u§   v½   eÎV   m0   \Íƒò   jZk   _Ó"   a@   e   f¾•   i   l¦C   o[¦   \f¸   dºÑ   sE°   zr   ^(Õ   aı‹   oÕà   tz‘    on×   t;÷   wºv    xmE   \‡’   ^»K   mm˜   qøN   [¥³r   ké=    rû	   s¡·   sî±   veá    bâ'   uq²   x/{   ]bº   a|Ê   f   o§1   ]9”   `q   bš   c×°   j/   jÙ¶   n<~   qßq   r"   wnO   e+]   f”   g\¥   jx   g­L   h½ù   nÖ1   [P×   \ı    ] D   aÀp   g‘i   i™   qS¯   ]İp   fH   eb   iÕ¢Á   [ËÁB   uØ!   yH   q¨    d#A   iay   pj3   r[   t¯
+   kK   _wW   k%	   yˆ%    y×'	   _¼'   `ÖK   tÜò‘   m×}   v:Ú   w$’   pÒÒ[    d^Ø   g   c˜m   \¡   oR2   ko/   m¦M   eßÄ	   nà    ny   fÒ1
+   `û›    \t[
+   hŠ   e»À   jçùI   c~Î   m80   p˜   _ìë.
+   [
+   aZû#	   zI`Ü   nkn   lp*ó   g6ü   lò   y’"   ^…E   `Üh   faMƒ   u9™	   \j   dİ\
+   oå
+   xª<ß   cÄß   s‰ñ   wÉğ
+   xİyÛ   ^_   vn¬—   chL—	   eBŞy   cI¤   l•ıl   ^¯J   hK$	   aŒJú   v¥™   ZÏ   \$—3   hÄi   Z¬»"	   jĞş   ]X®   blşw   t%İ   x„âñ
+   ^d   cëG   i(ú2
+   aëŞ   \ÄC   _&   _A   `#E   `KÊ   bß
+   b-Ë   h¯ı   hâš    eû¿   ]ó‚   [gÉ5   _!Ğ   g·|Ş   eu´   ^:œ
+   ]Í   `   f°   \T   ^Ğ4   `m”	   _a•   b®F   Zóû   eš¤0
+   gî¨—   bÕ   [o   `¶˜•	   iSj   ]rzù   eZ#–   d‹   gƒ§|   _—K    _²   dt    fÿË   ³	 ş		 2	 ª	 ü	 ¡	 D	 è	 ˜
+ ò	 	 –	 †	 		 }	 ˜		 t	 {	 £
+ ù	 š	 Ì	 ‘	 1	 '	 ˆ	 
+ ş
+	 à	 v	 [	 m	 	 R	 d	 9		 [	 y
+	 R
+ ¨
+
+ H
+ 	 ?
+ Š	 „	 6	 Ã
+ M	 -	 r	 $	 «	
+ 	 Í	 s	 	 		 ×	 ¸	 
+ h	 ÿ
+ Ú		 ç	 ö	 ó
+ ì	 		 ˜	 B		 ã
+ ÷	 Î	 ”	 ğ
+ :	 Ú
+ S
+	 _
+ d Ò	 É	 õ		 	 À	 D	 ·	 Ä	 ®	 (	 j ¦	 õ
+	  	 
+	 	 Ö	 ”
+ I
+	 ‹	 ]
+	 ‚
+ U	 z	 Æ	 	 q	 å	 	 h
+ Î
+	 _	 I	 V
+ ?	 )	 	 M	 º
+ C
+ ‚
+	 ê	 :
+ „		 1	 (	 Å	 '		 	 Œ	 
+ 	 
+ Ğ		 	 Ó	 û 	 6	 ò 	 -	 	 ¯	 é 
+ q		 ¼	 ƒ
+ `	 à 	 × 	 W	 Î 	 ^	 Ü	 Å 
+ #	 ¼ 	 	 ³ 	 	 ª 	 Ê	 s	 p
+	 ¡ 
+ Æ		 ˜ 	 ì
+	  	 	  	 6
+ ‡ 	 n	 Ş	 ¦	 ~ 	 ±	 u 
+ 0	 á	 Å
+	 l 	 	 c 	 ¨	 Z 
+ ©	 	 Q 	 ß	 H 	 0		 ü	 Á	 ? 
+ 
+
+ i í		 6 
+ 
+ , 
+ 	 	 # 
+ w	 Ÿ	  	 {	  	 î	 	 	 •
+	   
+ ²
+     É‰^
+ğu[         	     9 ¨  ! cW)¾çCß¿9íg•ú ’â$2‘Î0’ç•6f†	—% cW)¾çCß¿9íg•ú ’â$2‘Î0’ç•6f†	—ş @Microsoft-Windows-Client-Desktop-Required-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! c\úƒÁD$¼æYs êx_O” åÄSV 8ya`]% c\úƒÁD$¼æYs êx_O” åÄSV 8ya`]ş @Microsoft-Windows-Basic-Http-Minio-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! cb| B6VOş2ÂDLóÚ.XÆœ8U!“×_kƒ% cb| B6VOş2ÂDLóÚ.XÆœ8U!“×_kƒş @Microsoft-OneCore-ApplicationModel-Sync-Desktop-FOD-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! cfJqÄà Û°îCa".¬)³|ÔÑÜW÷s†Ù  i% cfJqÄà Û°îCa".¬)³|ÔÑÜW÷s†Ù  iş @Microsoft-Windows-Client-Desktop-Required-Package0318~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! ch.\á2öşCéu›™"ê¾ª±©³ršÎcñĞ”´% ch.\á2öşCéu›™"ê¾ª±©³ršÎcñĞ”´ş @Microsoft-Windows-Client-Desktop-Required-Package0319~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! c^EÊ)÷î“·^¬1lˆ˜ 1kĞêñ´ê% c^EÊ)÷î“·^¬1lˆ˜ 1kĞêñ´êş @Microsoft-Windows-Client-Desktop-Required-WOW64-Package0013~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! c[’L©Åäa«ş¥ñu¥vÇ×·Üi÷€"ù¯[	% c[’L©Åäa«ş¥ñu¥vÇ×·Üi÷€"ù¯[	ş @Microsoft-Windows-Client-Desktop-Required-Package03114~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Microsoft-Windows-Client-Desktop-Required-WOW64-Package0015~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! cWiÀ
+¦Œµ÷À«n¾‹G~“£«<s\9w"o8aC% cWiÀ
+¦Œµ÷À«n¾‹G~“£«<s\9w"o8aCş @Microsoft-Windows-Client-Features-Package0112~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! cfwï‘@€\„Èíégã«Î wïÀH–Üg¤2¼«% cfwï‘@€\„Èíégã«Î wïÀH–Üg¤2¼«ş @Microsoft-Windows-GroupPolicy-ClientTools-onecoreuap-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! cYÜÁg%t…‹ÛiÄ»'ÜC‹ÍÉ¨ÁÅ|tW®X…% cYÜÁg%t…‹ÛiÄ»'ÜC‹ÍÉ¨ÁÅ|tW®X…ş @Microsoft-Windows-IIS-WebServer-AddOn-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! c^¼¬–BÜL§”(µP[-’™Q²‡İbNİnÒ?R©% c^¼¬–BÜL§”(µP[-’™Q²‡İbNİnÒ?R©ş @Microsoft-Windows-Internet-Browser-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|Package_1440_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|! c`íïg%ü`YMFˆçŞN†ùóÖZµ›KL*B§% c`íïg%ü`YMFˆçŞN†ùóÖZµ›KL*B§ş @Microsoft-Windows-Internet-Browser-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Package_1271_for_KB4495667~31bf3856ad364e35~amd64~~10.0.1.11.cat|Package_1282_for_KB4494441~31bf3856ad364e35~amd64~~10.0.1.12.cat|Package_1456_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|! cekE,i¶å</eÌU‹zä”iFKµ9U´Ã‘•% cekE,i¶å</eÌU‹zä”iFKµ9U´Ã‘•ş @Microsoft-Windows-Internet-Browser-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Package_1271_for_KB4495667~31bf3856ad364e35~amd64~~10.0.1.11.cat|Package_1282_for_KB4494441~31bf3856ad364e35~amd64~~10.0.1.12.cat|Package_1456_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|! c^¼¬–BÜL§”(µP[-’™Q²‡İbNİnÒ?R©% c^¼¬–BÜL§”(µP[-’™Q²‡İbNİnÒ?R©ş @Microsoft-Windows-Internet-Browser-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|Package_1440_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|Package_1708_for_KB4507469~31bf3856ad364e35~amd64~~10.0.1.5.cat|! c`íïg%ü`YMFˆçŞN†ùóÖZµ›KL*B§% c`íïg%ü`YMFˆçŞN†ùóÖZµ›KL*B§ş @Microsoft-Windows-Internet-Browser-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Package_1271_for_KB4495667~31bf3856ad364e35~amd64~~10.0.1.11.cat|Package_1282_for_KB4494441~31bf3856ad364e35~amd64~~10.0.1.12.cat|Package_1456_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|Package_1724_for_KB4507469~31bf3856ad364e35~amd64~~10.0.1.5.cat|! cekE,i¶å</eÌU‹zä”iFKµ9U´Ã‘•% cekE,i¶å</eÌU‹zä”iFKµ9U´Ã‘•ş @Microsoft-Windows-Internet-Browser-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Package_1271_for_KB4495667~31bf3856ad364e35~amd64~~10.0.1.11.cat|Package_1282_for_KB4494441~31bf3856ad364e35~amd64~~10.0.1.12.cat|Package_1456_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|Package_1724_for_KB4507469~31bf3856ad364e35~amd64~~10.0.1.5.cat|bf3856ad364e35~amd64~~10.0.1.7.cat|net-Browser-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|”+¬ ±"³ Å%¬ "£–-² S!£ó+&Í*² ]#¦ ­ $© x&¤ !%­       '¦“uş
+¥     é   
+  	   I  W ( ! r­ SŸĞnÍHÑXT¸åh|ÕôÌ·Œ(3% r­ SŸĞnÍHÑXT¸åh|ÕôÌ·Œ(3ş @Containers-Client-Manager-onecore-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! r¯=ÍãImÉ¦s>·SøÎZc—;MROÇãmV=% r¯=ÍãImÉ¦s>·SøÎZc—;MROÇãmV=ş @Microsoft-Windows-Client-Desktop-Required-Package0314~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! r³®ã‡»øRüŸƒÜÑo="è ™lï¦C½ÛØ0·ù‡% r³®ã‡»øRüŸƒÜÑo="è ™lï¦C½ÛØ0·ù‡ş @Microsoft-Windows-Client-Desktop-Required-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! r½³íËg‘ïİ›¾òÑŠÈÎS­W±€ ¸»øL*% r½³íËg‘ïİ›¾òÑŠÈÎS­W±€ ¸»øL*ş @Microsoft-Windows-Client-Desktop-Required-Package0110~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! r½ü¶,ŞÈ€@Ÿ?3'ıØ–©•xŠN¡ÿÃÚFÿP¥©% r½ü¶,ŞÈ€@Ÿ?3'ıØ–©•xŠN¡ÿÃÚFÿP¥©ş @HyperV-VmUiDevices-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! r¾é¾Z%RÎ‚ ¼äŞË#l@s{+¼Üâ¡y—Wƒ% r¾é¾Z%RÎ‚ ¼äŞË#l@s{+¼Üâ¡y—Wƒş @Microsoft-Windows-Client-Desktop-Required-Package0316~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! rÁ9İûêv–\Ú“ÒİĞá÷®*·:ø®£suD£% rÁ9İûêv–\Ú“ÒİĞá÷®*·:ø®£suD£ş @Microsoft-Windows-Client-Desktop-Required-Package01~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! r­‡<¸=^•3s;¾Ë ”rıËÁ9ÁNóË‘d% r­‡<¸=^•3s;¾Ë ”rıËÁ9ÁNóË‘dş @Microsoft-Windows-Client-Desktop-Required-WOW64-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! rÃ¯¬›†""jéüE
+ËæwRg/7ë;Øa‘­x£% rÃ¯¬›†""jéüE
+ËæwRg/7ë;Øa‘­x£ş @Microsoft-Windows-Client-Features-Package0111~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! rÃuú•y‚¢n}ğ²ş¯ÄKzàÜ…ü£H‘V% rÃuú•y‚¢n}ğ²ş¯ÄKzàÜ…ü£H‘Vş @Microsoft-Windows-Client-Features-Package03~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! r½M§vˆ—ˆ¦òsµ-BÍöåÊ¯P=Jµ/ùÛR% r½M§vˆ—ˆ¦òsµ-BÍöåÊ¯P=Jµ/ùÛRş @Microsoft-Windows-RDC-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! r²µÆH’
+™ñÍ¡”lüuü¥‡Oû1Lèû>µeV% r²µÆH’
+™ñÍ¡”lüuü¥‡Oû1Lèû>µeVş @Microsoft-Windows-TerminalServices-WMIProvider-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! r´y›Íl|á±ûÿñn¡ƒ»}¹ïÀ\ÙqÑ% r´y›Íl|á±ûÿñn¡ƒ»}¹ïÀ\ÙqÑş @Package_176_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|-Desktop-Required-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! r­‡<¸=^•3s;¾Ë ”rıËÁ9ÁNóË‘d% r­‡<¸=^•3s;¾Ë ”rıËÁ9ÁNóË‘dş @Microsoft-Windows-Client-Desktop-Required-WOW64-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! rÌ´ü›$ß”É<°Æ<x;_0ş~2Ô Ü®Ğ×˜Ê % rÌ´ü›$ß”É<°Æ<x;_0ş~2Ô Ü®Ğ×˜Ê ş @Microsoft-Windows-Client-Features-Package0110~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! rÃ¯¬›†""jéüE
+ËæwRg/7ë;Øa‘­x£% rÃ¯¬›†""jéüE
+ËæwRg/7ë;Øa‘­x£ş @Microsoft-Windows-Client-Features-Package0111~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! rÃuú•y‚¢n}ğ²ş¯ÄKzàÜ…ü£H‘V% rÃuú•y‚¢n}ğ²ş¯ÄKzàÜ…ü£H‘Vş @Microsoft-Windows-Client-Features-Package03~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! rÊï¬G‡3M?ñtÿe§"`6s9}ê,qº(¿g+E¸% rÊï¬G‡3M?ñtÿe§"`6s9}ê,qº(¿g+E¸ş @Microsoft-Windows-Client-Features-Package00~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|Microsoft-Windows-Client-Features-WOW64-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! rÊ«şÏ!Ï„õ âcW]EŞÀÀp+xÎYß¿GÁ6İÉ% rÊ«şÏ!Ï„õ âcW]EŞÀÀp+xÎYß¿GÁ6İÉş @Microsoft-Windows-Management-SecureAssessment-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! rİÖ±Š·$ŒJo°ˆfËÙY—wŠ9ÉšèàŠ«™Fy% rİÖ±Š·$ŒJo°ˆfËÙY—wŠ9ÉšèàŠ«™Fyş @Microsoft-Windows-NetFx3-OnDemand-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! rÒIøê­Ş\»Ğ­U—ømÀH”ø@É¯õŞeê{c% rÒIøê­Ş\»Ğ­U—ømÀH”ø@É¯õŞeê{cş @Microsoft-Windows-NetFx4-US-OC-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! r½M§vˆ—ˆ¦òsµ-BÍöåÊ¯P=Jµ/ùÛR% r½M§vˆ—ˆ¦òsµ-BÍöåÊ¯P=Jµ/ùÛRş @Microsoft-Windows-RDC-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! r²µÆH’
+™ñÍ¡”lüuü¥‡Oû1Lèû>µeV% r²µÆH’
+™ñÍ¡”lüuü¥‡Oû1Lèû>µeVş @Microsoft-Windows-TerminalServices-WMIProvider-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|        ° B'  ã,¯ “&¬ ç%¨ ò'¢ ƒ-ª =%¤ H)2+¬ 7,¤ :%¢ Ş%ª â#¬ 6#‘ ¥"™ €&± ô!Œ Ë'¨ L!² '¬       ® Œ$    'ÑÄÄ¦       y  	   #  m ¨  ! u]ZöyíãkòBÀaO¿pÿ¸êš}¸6B¼'›=§…% u]ZöyíãkòBÀaO¿pÿ¸êš}¸6B¼'›=§…ş @Microsoft-Windows-Client-Desktop-Required-Package031020~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u•Ş{nıƒK‰Mì!Ğ¶ÂHè‰¬=g´:ï·©¾Û/% u•Ş{nıƒK‰Mì!Ğ¶ÂHè‰¬=g´:ï·©¾Û/ş @Microsoft-Windows-Client-Desktop-Required-Package0010~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! ux“yü]f	åŞŒË“fŞ_	¹º4µYlë%ÿ(f% ux“yü]f	åŞŒË“fŞ_	¹º4µYlë%ÿ(fş @Microsoft-Windows-Client-Desktop-Required-Package03111~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Microsoft-Windows-Client-Desktop-Required-Package0311~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u!÷0yÎ…¯½{ë’0±A†ÿ¥Ÿõá‹|JU6% u!÷0yÎ…¯½{ë’0±A†ÿ¥Ÿõá‹|JU6ş @Microsoft-Windows-Client-Desktop-Required-Package031021~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u&5ïó±w&»w}Çƒc®vxÔÌ%zo|ÄhKxÖW'% u&5ïó±w&»w}Çƒc®vxÔÌ%zo|ÄhKxÖW'ş @Microsoft-Windows-Client-Desktop-Required-Package031021~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u'óALG’×¥ÚWór–ÜéÜ}3ØÎ!8`Ö%í=ÔÉ#% u'óALG’×¥ÚWór–ÜéÜ}3ØÎ!8`Ö%í=ÔÉ#ş @Microsoft-Windows-Client-Desktop-Required-Package031021~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u4<¨©_0}€¸%RoàG¬'¶ŠÔKoe!tà% u4<¨©_0}€¸%RoàG¬'¶ŠÔKoe!tàş @Microsoft-Windows-Client-Desktop-Required-Package0316~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u–RŸºağ{ƒLM[²!H8HËSò£§şÜ% u–RŸºağ{ƒLM[²!H8HËSò£§şÜş @Microsoft-Windows-Client-Desktop-Required-WOW64-Package0012~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u7oÃ¥_ºâ(Õğš)£kóèã¶­·I'¹% u7oÃ¥_ºâ(Õğš)£kóèã¶­·I'¹ş @Microsoft-Windows-Client-Features-Package0115~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u’Æs¢eè²Ÿ[ÿ¤•_ÂrÙHçkµÔŠoìb% u’Æs¢eè²Ÿ[ÿ¤•_ÂrÙHçkµÔŠoìbş @Microsoft-Windows-Client-Features-Package0116~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u#xäb“Î u·­ıví¯;¨Ï­:iIF;dtw$v% u#xäb“Î u·­ıví¯;¨Ï­:iIF;dtw$vş @Microsoft-Windows-GroupPolicy-ClientTools-ds-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! u,^¡¦ <EÖÏd%¾TE°í®5Øğèëà´ã% u,^¡¦ <EÖÏd%¾TE°í®5Øğèëà´ãş @Microsoft-Windows-Internet-Browser-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u0¿Ù;7ÁÓ”ª…V¹¢üšG¤/G°¯kº,a(è?«% u0¿Ù;7ÁÓ”ª…V¹¢üšG¤/G°¯kº,a(è?«ş @Microsoft-Windows-MediaPlayer-Payload-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u4I›±M—‰5çÃkwÓÿú-´¨×c×NeºÅ=F>% u4I›±M—‰5çÃkwÓÿú-´¨×c×NeºÅ=F>ş @Microsoft-Windows-MultiPoint-Connector-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u,«:ì»Q\¦àß&j¹zÓ-Ğ
+×Æô²`¸% u,«:ì»Q\¦àß&j¹zÓ-Ğ
+×Æô²`¸ş @Microsoft-Windows-SQL-Lite-WOW64-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u1?KKŒÑ›¬hyIXZ‘—1ÄşK0Œ?İÅKÒXMª% u1?KKŒÑ›¬hyIXZ‘—1ÄşK0Œ?İÅKÒXMªş @Package_1851_for_KB4507469~31bf3856ad364e35~amd64~~10.0.1.5.cat|! u*ÈÀ+ßÖÙi¹­İÖÓK½q”,¤µtzH. % u*ÈÀ+ßÖÙi¹­İÖÓK½q”,¤µtzH. ş @Package_220_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|bş @Microsoft-Windows-Client-Features-Package0116~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! uCÙÿ—±ë¤Yš „åo ;Zş£îöí•5´xäÕ% uCÙÿ—±ë¤Yš „åo ;Zş£îöí•5´xäÕş @Microsoft-Windows-Client-Desktop-Required-Package03114~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Microsoft-Windows-Client-Features-Package01~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! uL5ër+@J»2˜P ¾A\P[îHRÎáY@% uL5ër+@J»2˜P ¾A\P[îHRÎáY@ş @Microsoft-Windows-Client-Features-Package02~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! uE½¸ÒâÌ¸Élõ—h9§QÉÏyò®l¯ˆ½% uE½¸ÒâÌ¸Élõ—h9§QÉÏyò®l¯ˆ½ş @Microsoft-Windows-Client-Features-Package03~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! u#xäb“Î u·­ıví¯;¨Ï­:iIF;dtw$v% u#xäb“Î u·­ıví¯;¨Ï­:iIF;dtw$vş @Microsoft-Windows-GroupPolicy-ClientTools-ds-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! u,^¡¦ <EÖÏd%¾TE°í®5Øğèëà´ã% u,^¡¦ <EÖÏd%¾TE°í®5Øğèëà´ãş @Microsoft-Windows-Internet-Browser-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|.17763.1.cat|        § Í,¤ ƒ*² %'® Æ.¬ y&¤ Ó%¥ )¬ u$ T*¤ l(Ÿ µ)¡ Ë'Œ á*® Ç#® #° '® k"_!¤ w&± ® ² !%®       AÄ×ìÔÔ´       ?  	   Ğ  ( ( ! v½ãá|Säú6¶³U’…RÁVYÒ=hñJNg~M% v½ãá|Säú6¶³U’…RÁVYÒ=hñJNg~Mş @Microsoft-Windows-Client-Desktop-Required-Package0314~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! v¾0'ª6k+åÜ¼hĞ„´âÚ (“°àÜQîÉù|% v¾0'ª6k+åÜ¼hĞ„´âÚ (“°àÜQîÉù|ş @Microsoft-Windows-Client-Desktop-Required-Package0310~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! vÀDPÇí5ßÒªxšA©k‰Ü´,{l'Æş;àuÑ‘©% vÀDPÇí5ßÒªxšA©k‰Ü´,{l'Æş;àuÑ‘©ş @Microsoft-Windows-Client-Desktop-Required-Package00~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! vÄòRù¸ğÃû”8h¸şìUí—áaV±Õ?>Î)[% vÄòRù¸ğÃû”8h¸şìUí—áaV±Õ?>Î)[ş @Microsoft-Windows-Client-Desktop-Required-Package031021~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! vÆ
+U^Dˆ!»«0ƒe\â<¿ìú÷~¬$…PÁÓWC% vÆ
+U^Dˆ!»«0ƒe\â<¿ìú÷~¬$…PÁÓWCş @Microsoft-Windows-Client-Desktop-Required-Package0312~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! vÍøà‘ĞFTz‰\=ÄÁ8¾sÅsP‰Rî.Ä% vÍøà‘ĞFTz‰\=ÄÁ8¾sÅsP‰Rî.Äş @Microsoft-Windows-Client-Desktop-Required-Package00~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! v¿[r¤™ø7)PF™Àl¼êëğùğğSs/j% v¿[r¤™ø7)PF™Àl¼êëğùğğSs/jş @Microsoft-Windows-Client-Features-Package0110~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! vÏË­„>Z}ŸTÚÓ¼æ<»1(ò•éü&W;¢ï ŒCó% vÏË­„>Z}ŸTÚÓ¼æ<»1(ò•éü&W;¢ï ŒCóş @Microsoft-Windows-Client-Desktop-Required-Package03115~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Microsoft-Windows-Client-Features-WOW64-Package0012~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! vÃØÓ5ÕÈ\sûã%öVë©ŸG¹Ä•œ•¸ğÔÌTy% vÃØÓ5ÕÈ\sûã%öVë©ŸG¹Ä•œ•¸ğÔÌTyş @Microsoft-Windows-GroupPolicy-ClientExtensions-ds-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! vÁ!Òø4–T]w‚Ë®À“½¸ˆs€œ¶(…ãÈÙi% vÁ!Òø4–T]w‚Ë®À“½¸ˆs€œ¶(…ãÈÙiş @Microsoft-Windows-IIS-WebServer-AddOn-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Microsoft-Windows-IIS-WebServer-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! vÎ–šLò,¼ó+Â“…0§J›-ÒWÇñèb˜ÿ•·Ï% vÎ–šLò,¼ó+Â“…0§J›-ÒWÇñèb˜ÿ•·Ïş @Microsoft-Windows-Security-SPP-Component-SKU-Professional-License-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! vÊJt»â×ÎÔ<l…jå†38ÌÕÊı'0$odÏ§% vÊJt»â×ÎÔ<l…jå†38ÌÕÊı'0$odÏ§ş @Package_1092_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|! vÎ)
+®XˆëWõÕw(:g£¹H¥÷µk¯Ï­±
+% vÎ)
+®XˆëWõÕw(:g£¹H¥÷µk¯Ï­±
+ş @Package_1300_for_KB4495667~31bf3856ad364e35~amd64~~10.0.1.11.cat|Package_1311_for_KB4494441~31bf3856ad364e35~amd64~~10.0.1.12.cat|! vÊJt»â×ÎÔ<l…jå†38ÌÕÊı'0$odÏ§% vÊJt»â×ÎÔ<l…jå†38ÌÕÊı'0$odÏ§ş @Package_1092_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|Package_1339_for_KB4507469~31bf3856ad364e35~amd64~~10.0.1.5.cat|! vÎ)
+®XˆëWõÕw(:g£¹H¥÷µk¯Ï­±
+% vÎ)
+®XˆëWõÕw(:g£¹H¥÷µk¯Ï­±
+ş @Package_1300_for_KB4495667~31bf3856ad364e35~amd64~~10.0.1.11.cat|Package_1311_for_KB4494441~31bf3856ad364e35~amd64~~10.0.1.12.cat|Package_1503_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|Package_1785_for_KB4507469~31bf3856ad364e35~amd64~~10.0.1.5.cat|! vÁ{›¼vc«‚Ê6×uR4¹§©.–ÔDñãE•9’+±% vÁ{›¼vc«‚Ê6×uR4¹§©.–ÔDñãE•9’+±ş @Package_1966_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|upPolicy-ClientExtensions-ds-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! vàoÙ¨øTûoÒºšå¶U	×_Vê5ÁSì% vàoÙ¨øTûoÒºšå¶U	×_Vê5ÁSìş @Microsoft-Windows-GroupPolicy-ClientTools-ds-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! vÁ!Òø4–T]w‚Ë®À“½¸ˆs€œ¶(…ãÈÙi% vÁ!Òø4–T]w‚Ë®À“½¸ˆs€œ¶(…ãÈÙiş @Microsoft-Windows-IIS-WebServer-AddOn-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Microsoft-Windows-IIS-WebServer-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! vÎ–šLò,¼ó+Â“…0§J›-ÒWÇñèb˜ÿ•·Ï% vÎ–šLò,¼ó+Â“…0§J›-ÒWÇñèb˜ÿ•·Ïş @Microsoft-Windows-Security-SPP-Component-SKU-Professional-License-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! vÊJt»â×ÎÔ<l…jå†38ÌÕÊı'0$odÏ§% vÊJt»â×ÎÔ<l…jå†38ÌÕÊı'0$odÏ§ş @Package_1092_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|                       ® l*­ ^%¡  .° {,¬ +¤ Ã'
+¯$À c'OL*ª a#Í )¬ µ"® "µ ¹% ›+õ n&¯ X!¤ $¬ ¬ ¬       ÅÉi´‡xpäå     7  P  	   f  Î ¨ ! €“°ó~Û=TØİ	§,Œ"Zpá—SĞèÌ\bóT$b% €“°ó~Û=TØİ	§,Œ"Zpá—SĞèÌ\bóT$bş @Microsoft-Windows-Client-Desktop-Required-Package03115~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €“í´@zˆ ŒìO¬ÿ%mi	jF
+O
+	ŒQùÌP% €“í´@zˆ ŒìO¬ÿ%mi	jF
+O
+	ŒQùÌPş @Microsoft-Windows-Client-Desktop-Required-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! €–|`ÅhçË3	#{œÅ×€*kv?0^ãÑï'(³% €–|`ÅhçË3	#{œÅ×€*kv?0^ãÑï'(³ş @Microsoft-Windows-Client-Desktop-Required-Package031020~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €–Â€†%‚/Á„)R®XcÄÁrã8c3‰Â~% €–Â€†%‚/Á„)R®XcÄÁrã8c3‰Â~ş @Microsoft-Windows-Client-Desktop-Required-Package0314~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €—VvF>g85}¾e¡$¯rAgßséáxß¦št¦2v% €—VvF>g85}¾e¡$¯rAgßséáxß¦št¦2vş @Microsoft-Windows-Client-Desktop-Required-Package0010~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! €È=û:#Dá5ÉC[Á¢ä³¯…œ=xÚá— ´õZö6% €È=û:#Dá5ÉC[Á¢ä³¯…œ=xÚá— ´õZö6ş @Microsoft-Windows-Client-Desktop-Required-Package03114~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €¡PèA’AÄÊ‰Áş»É¿µÌ¿aüºÓ$Ä°Ò€% €¡PèA’AÄÊ‰Áş»É¿µÌ¿aüºÓ$Ä°Ò€ş @Microsoft-Windows-Client-Desktop-Required-Package00~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! €¡İÕ•şåÜÍx,Py½:“ë.¤™e”Ø´®“ã% €¡İÕ•şåÜÍx,Py½:“ë.¤™e”Ø´®“ãş @Microsoft-Windows-Client-Desktop-Required-Package0311220~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €£Ú.™˜DŞL„¯ÿ+#‘4ØİçüŞ OlÍb÷À% €£Ú.™˜DŞL„¯ÿ+#‘4ØİçüŞ OlÍb÷Àş @Microsoft-Windows-Client-Desktop-Required-Package0112~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|Microsoft-Windows-Client-Desktop-Required-Package01~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! €£ûé„)œQ?®0ö˜UrQ›H\ùú»cq”ÅI% €£ûé„)œQ?®0ö˜UrQ›H\ùú»cq”ÅIş @Microsoft-OneCore-ApplicationModel-Sync-Desktop-FOD-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €©ìÏWú8ÅDôÉoîÀ‰ùË4%ßùp €<g¡iV% €©ìÏWú8ÅDôÉoîÀ‰ùË4%ßùp €<g¡iVş @Microsoft-Windows-Client-Desktop-Required-Package00~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €”±¾œëù{ag‹9†i¯`R}ëóBM„Ò% €”±¾œëù{ag‹9†i¯`R}ëóBM„Òş @Microsoft-Windows-Client-Desktop-Required-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €£ú[Q_•JÁ@®õ¹Y¸¾fĞ#ı% €£ú[Q_•JÁ@®õ¹Y¸¾fĞ#ış @Microsoft-Windows-Client-Desktop-Required-WOW64-Package0015~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €ŸMb<b	yè2¯Le¡»6}_'’ıÙ'?ÉæHN~% €ŸMb<b	yè2¯Le¡»6}_'’ıÙ'?ÉæHN~ş @Microsoft-Windows-Client-Features-Package0011~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! €¤<Ä&nÆh)øÎDuùo‘¹Á~. ï2Ó0Ae
+ØÏ% €¤<Ä&nÆh)øÎDuùo‘¹Á~. ï2Ó0Ae
+ØÏş @Microsoft-Windows-Client-Features-Package0116~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €¡êÉ›«·®Ô¶İB)¨øÕ®guÂW„d2
+ß% €¡êÉ›«·®Ô¶İB)¨øÕ®guÂW„d2
+ßş @Microsoft-Windows-Client-Features-WOW64-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! €”fŒVÍ;Lñü ‚³öM*]Œ»wˆ¥Î#¯% €”fŒVÍ;Lñü ‚³öM*]Œ»wˆ¥Î#¯ş @Microsoft-Windows-GroupPolicy-ClientTools-ds-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! €˜f²ø‘æû>aæü£\å|Ä“ÀÛîzcŒ¯İ]»a°% €˜f²ø‘æû>aæü£\å|Ä“ÀÛîzcŒ¯İ]»a°ş @Microsoft-Windows-GroupPolicy-ClientTools-ds-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €”fŒVÍ;Lñü ‚³öM*]Œ»wˆ¥Î#¯% €”fŒVÍ;Lñü ‚³öM*]Œ»wˆ¥Î#¯ş @Microsoft-Windows-GroupPolicy-ClientTools-ds-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|Microsoft-Windows-GroupPolicy-ClientTools-WOW64-ds-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! €™4I“ÏÔŠÔ´1Ûİ5“	Ï;e¬J:“ƒ`ş% €™4I“ÏÔŠÔ´1Ûİ5“	Ï;e¬J:“ƒ`şş @Microsoft-Windows-NetFx4-US-OC-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! €£äc0óo¦_VêAÆs°™ù»I mA¿:s€% €£äc0óo¦_VêAÆs°™ù»I mA¿:s€ş @Package_132_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|                                                                                                                                                                                      ª 5'¤ â)² ƒ&² ‡(Œ B.p%¯ Á$¯ $« †*© 9)­ e# ¥-« á+± ´"¬ "® Z!¨ ß'Œ,­ ­ ­       úœ0H…%…%S       ƒ  	   U   / ¨ ! Ø±¨hÉÛhg3¡´ydçœN¢u/D¦*3e‚^»_n^% Ø±¨hÉÛhg3¡´ydçœN¢u/D¦*3e‚^»_n^ş @Microsoft-Windows-Client-Desktop-Required-Package03114~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! Ù4Lš^h‰µ‡Kãe}ï…) T!rrŠ^¼ûZŸâá% Ù4Lš^h‰µ‡Kãe}ï…) T!rrŠ^¼ûZŸâáş @Microsoft-Windows-Client-Desktop-Required-Package0314~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! ÛRıô|?§ÊmÆSÏ±rSh°ó²“Ù·ş8ºXÌ~% ÛRıô|?§ÊmÆSÏ±rSh°ó²“Ù·ş8ºXÌ~ş @Microsoft-Windows-Client-Desktop-Required-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! àS&Û‡	b³¹ ¬?ûc‹Eß,¥ª,ëıìá9% àS&Û‡	b³¹ ¬?ûc‹Eß,¥ª,ëıìá9ş @Microsoft-Windows-Client-Desktop-Required-Package03115~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! â©]<IF€)À~X÷_¤ÏËa~¯k×uvûªC²% â©]<IF€)À~X÷_¤ÏËa~¯k×uvûªC²ş @Microsoft-Windows-Client-Desktop-Required-Package0311~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! ä„5Õµß· œƒO{kŠ‘	â`ßŠq%yx#% ä„5Õµß· œƒO{kŠ‘	â`ßŠq%yx#ş @Microsoft-Windows-Client-Desktop-Required-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! äà¯…ä¹_ğäfvøkİımuO,SŞ–N“E¹|% äà¯…ä¹_ğäfvøkİımuO,SŞ–N“E¹|ş @Microsoft-Windows-Client-Desktop-Required-Package0318~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! é&–Ëî‡Mñ¶ÿJ¾ƒISÄü
+¬Ø<ÈŠ6¦9»% é&–Ëî‡Mñ¶ÿJ¾ƒISÄü
+¬Ø<ÈŠ6¦9»ş @Microsoft-Windows-Client-Desktop-Required-Package0010~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! ŞLÉq|™ÔY®ÙE.Ìx2Ö(#»†.Y.ièÓ4ÇÚ¤% ŞLÉq|™ÔY®ÙE.Ìx2Ö(#»†.Y.ièÓ4ÇÚ¤ş @Microsoft-Windows-Client-Desktop-Required-WOW64-Package0015~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! Ü	Ê.Mºö“uŞ½-¹dÁŒç‚OÛ|7­ø% Ü	Ê.Mºö“uŞ½-¹dÁŒç‚OÛ|7­øş @Microsoft-Windows-Client-Desktop-Required-WOW64-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! ÛøÈÓG&érx]?sbE³@iµ´†Û«÷ûç·% ÛøÈÓG&érx]?sbE³@iµ´†Û«÷ûç·ş @Microsoft-Windows-Client-Features-WOW64-Package0010~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! ê<ó
+[m¶½úqãí•,Hır$(áeÆëOºI¤% ê<ó
+[m¶½úqãí•,Hır$(áeÆëOºI¤ş @Microsoft-Windows-Client-Features-WOW64-Package0010~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! òI|t4/!Œ«÷r$ó	{ÍôcÍ>rwyÚa¸% òI|t4/!Œ«÷r$ó	{ÍôcÍ>rwyÚa¸ş @Microsoft-Windows-Client-Desktop-Required-WOW64-Package00~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|Microsoft-Windows-Client-Features-WOW64-Package00~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! ïŠ;|“2”ÆØ—Hô¿x–½¼ıóË¼åñ*ó¯0¯% ïŠ;|“2”ÆØ—Hô¿x–½¼ıóË¼åñ*ó¯0¯ş @Microsoft-Windows-FCI-Client-Package~31bf3856ad364e35~amd64~en-US~10.0.17763.1.cat|! æ–cÀ»¬gg±¸—vE€
+úê4!x;nHÕ„À5b6% æ–cÀ»¬gg±¸—vE€
+úê4!x;nHÕ„À5b6ş @Microsoft-Windows-HgsClient-Core-servercommon-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! ãÔ3ueÚhÉ}B$Ûµ),ÿm'2Í³ÿáSËãª`ò% ãÔ3ueÚhÉ}B$Ûµ),ÿm'2Í³ÿáSËãª`òş @Microsoft-Windows-Multimedia-MF-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! å3è¾LlŸjüt`?r>mB¦ì~sœÛ§ø®¢Ä% å3è¾LlŸjüt`?r>mB¦ì~sœÛ§ø®¢Äş @Microsoft-Windows-NetFx4-US-OC-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! ê?zÛod_#aš»FşH³1z|«=ÙUÌ¦SÍ5ÊÜ% ê?zÛod_#aš»FşH³1z|«=ÙUÌ¦SÍ5ÊÜş @Microsoft-Windows-NetFx4-US-OC-Package~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! ñ	B'$6ƒ¼ÑÕæyÎ\¦ùëƒ«•€dWÙøõÚM% ñ	B'$6ƒ¼ÑÕæyÎ\¦ùëƒ«•€dWÙøõÚMş @Package_1066_for_KB4507469~31bf3856ad364e35~amd64~~10.0.1.5.cat|! äÅæÁìÑ¹Èy¡¶««på»QMÄdl(h¢˜	f% äÅæÁìÑ¹Èy¡¶««på»QMÄdl(h¢˜	fş @Package_1602_for_KB4495667~31bf3856ad364e35~amd64~~10.0.1.11.cat|Package_1661_for_KB4494441~31bf3856ad364e35~amd64~~10.0.1.12.cat|Package_1851_for_KB4495667~31bf3856ad364e35~amd64~~10.0.1.11.cat|Package_1899_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|Package_1913_for_KB4494441~31bf3856ad364e35~amd64~~10.0.1.12.cat|Package_1993_for_KB4507469~31bf3856ad364e35~amd64~~10.0.1.5.cat|Package_2230_for_KB4503327~31bf3856ad364e35~amd64~~10.0.1.7.cat|Package_2333_for_KB4507469~31bf3856ad364e35~amd64~~10.0.1.5.cat|                                                                             ± c'¬ ·&( Q,  -) ´+ª n'± ®$¬ Í) +¬ $QŞ,¨ Z# y*¬ ®"­ "² _%³ &ª Ä&¨ Y!¬ ­ ­       *Ÿ¬åøz              	   –  ÖÛ (  š÷   ›|   ›Oz   ›Ÿï   ›¶   ›ò›   œ8L   œ‡z   œ©t   œÍ¼   œøƒD   <   †½   Ü9      JÙ   £J   Ç   ÿã†   Ÿ6(   ŸoA   Ÿ”©   ŸÆô    Š    L»    …Ì    ¯ø    Óò    í–   ¡M   ¡V(   ¡z[ª   ¡£ó   ¡Ôƒ   ¢,   ¢>R   ¢qø
+   ¢±ù   ¢ôt   £7T   £U)   £˜   £İË   ¤ôa   ¤>2   ¤u[   ¤½f   ¤ûL<   ¥"†   ¥<{   ¥m   ¥¨*   ¥Ë¯   ¦1«   ¦g#   ¦‰…   ¦®Ó   ¦ŞŠ   §ö   §8N   §‚Š   §´‡   §óÛ   ¨N    ¨«   ¨Û   ©   ©?   ©ƒI   ©Ù£   ©ñç©   ª¾   ªRú   ªyO   ªÂ’   «Ğ   «0-   œc   ­/   £xZ   ¨\±Ö   ¨¿0   ©7   ¤œ¾   ¥ˆ˜   _¦   qÈ   §[v   ª€   £¸ò    "¤ë    ¢T¨   ¥õœ   ›rÂ   `   ¤“   ¤ëÚ   ©U‚   ©·š»   ªæø   ¥dÙ   ›0¡   ›Ñå   ¨)   ùn   #ëæ   ŸÕŒ¢   ¢s   ª:   Ÿ[¬5   ¤SÆH    iÉ   ¦¼6   °EQ   ¡êa   £lá€   §Íw   ¨íu    ¦MW   ¡=’   œ8   ¡†   §#I   «)   §s;
+    ¿ÿ²   ¡“]÷   ¡»™   ¢Ô„   ¦ú   Ÿ[	   £E.	   ¥˜
+   £ó³   ¥‘   §µ   ‘:
+   ¡h9   ¨†‡;   ¤Ü°     ±£   Ÿ~    ¦ù
+   ¢O;    ¥·£´   £©   ªÑ*   š7   ¨¨ø   É¢	   œs¡	    ã-	   £9    :÷
+   9q÷   šâ    œI6   œèâ   ªdå   ª†;   £Éq
+   ¥å¥   ©™K   ¤J   £ˆÒ£	   ©-Ë	   œ—Ô™    ":   œÀòâ   lÇ9
+   ¤‡H:   ¦˜   uö   ›©ÊV   ¨*œ   ©fº¯   ¢Ä8   ¢áõ   ›   ªä   ªõõæ   ¨ÉÊ	   «¦   ¢(­   ¤gB   ©LË   îö   Ÿòæø   Qõ   ¥FóÕ   §à   ¡…Ô   ¤,;   ¨vÉ	   £%—   £t¦   ¥0ã   ©Æ°   ¢KYI   ©å÷   ›h#    sÅ‰   ¦å“   Ó   ¡Ş¤   ¤¦´
+   ¡Éô   ¢¿ìÊ   ¦}–   ›‡9   Ÿ­º˜   ª×   ¡ô   «#Z_   –©   ¥Vu   ª­Ş<
+   ¥}š    ¦¼6   ¬Û—   µ§   µc+   ¸bç   º3M   ºg   °EQ   ¡ê¤   £lá€   §Íw   ¨íu    ¦MW   ³è	
+   ¡=’   ­»   œ8   ¡†   §#I   «)   ¯J   §s;
+   ·D?   «bL    ¿ÿ²   ¡“]÷   ¡»™   ¢ÔÊ   ¦ú“   «ÂÕ   ¹[—   Ÿ[	   £E.	   ¥˜
+   ¶ æ   £ó³   ´Wa   ¶¨   ¸òæú   ºª–p   ¥u   §µ   ‘:
+   ¡h9   ¨†‡;   ®xN   ¶kº   ¤Ü°    ¬³¶   ® *   ³jœ    ±£   µ‡Šß   Ÿ~    ¦ù
+   ¢O;    ¥·£´   °ı¢ç   ºn   ¸6–   ¬M   ¹„Y   £©   ªÑ*   µ¼Ö   ¸k˜    ­à·   ¹£Î	   š7   ¨¨ø   É¢	   ¯F    °ÍX   ³6P   ¹öb   œs¡	   ­Kr
+    ã-	   £9   ¶ø|¨   ±%Ø    :÷
+   «‘:   ±V°³
+   µøP   9q÷   šâ    œI6   œèâ   ªdå   ª†;   £Éq
+   ¥å¥   ©™K   ¤J   £ˆÒ£	   ©-Ë	   œ—Ô™    ":   œÀòâ   lÇ9
+   ¤‡H:   ¦˜   uö   ›©ÊV   ¨*œ   ©fº¯   ¢Ä8   ¢áõ   ›   ªä   ªõõæ   ¨ÉÊ	   «¦   ¢(­   ¤gB   ©LË   îö   Ÿòæø   Qõ   ¥FóÕ   §à   ¡…Ô   ¤,;   ¨vÉ	   £%—   £t¦  	 ²
+ ¦	 c	 ‡ ª
+ t	 …	 8	 ¡
+ Ã	 	 ®	 ˜	 ¥	 	 Ø	 ”	 †	 k
+ |	 $	 s	 
+ {	 É	 j
+ F
+ q	 ¢	 a
+ å	 é	 X	 -	 O	 ~	 à	 J	 F
+ ì	 ì
+ Ö	 =	 =	 ©	 4	 Ñ	 $	 +	 Ñ	 "	 l	 	 	 Z	 	 ›	 @	 	 ş	 ş	  	 õ	 x	 ì	 6	 ã	 	 D	 À	 Ú
+ %	 Ñ	 ¶	 û	 Í
+ Ç	 
+ Ç	 ¾	 	 µ	 È
+ ¹
+ «	 h	 ö	 ¢
+ [	 ò
+ 	 ™	 ™
+ ë	 	 ã	 _	 Ò
+ †	 ¿
+ |	 ·	 (	 /	 s
+ Û	 Í
+ ş
+ 	 j	 ­	 a	 õ	 n	 X	 Z	 ’
+ n	 O	 Ï
+ P	 F	 ;
+ 	 =	 
+  5	 	 	 R	 ,	 e	 ‰	 #
+ 	 Ú
+ 	 ã	 	 ?	 	 Q	 ş 	 e
+ ô 
+ u	 ë 
+ ÿ	 â 
+ 6	 õ	 Ù 	 w
+ 1 Ñ 
+ ´
+ Å	 È 
+ Š	 ¿ 	 		 ¶ 
+ á	 ­ 	 ¤
+ £ 	 «	 š 
+ 	 ‘ 	 °	 Ú	 	 ˆ 
+ €
+ »	  
+ )	 ²	 v 	 S	 Ä	 A	 m 
+ 	 	 ¾	 d 	 ù	 V	 I
+ Z 	 œ	 Q 
+ 	 H 
+ ï	 ? 	 \	 »	 “	 6 	 H	 - 	  	 $ 
+ 3	  	 	 M	 -	  	 —	 	  c	   	 Š    §˜*áº7º7Ø         	   Œ  ü ¨  ! ‚œÄ2êaÀºvĞ–÷e]­ı‘@`ïèƒíÌ_É,M„% ‚œÄ2êaÀºvĞ–÷e]­ı‘@`ïèƒíÌ_É,M„ş @Microsoft-Windows-Client-Desktop-Required-Package031021~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Microsoft-Windows-Client-Desktop-Required-Package0316~31bf3856ad364e35~amd64~~10.0.17763.1.cat|Microsoft-Windows-Client-Desktop-Required-Package03~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! ‚§Ïc_ìpqËåA]…ŸaewÁ%»]§â»Àn×Œî(% ‚§Ïc_ìpqËåA]…ŸaewÁ%»]§â»Àn×Œî(ş @Microsoft-Windows-Client-Desktop-Required-Package0319~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! ‚°+¸¾é®V24¶H‚1–óäÓËš€“U}~Ğt% ‚°+¸¾é®V24¶H‚1–óäÓËš€“U}~Ğtş @Microsoft-Windows-Client-Desktop-Required-Package0314~31bf3856ad364e35~amd64~~10.0.17763.1.cat|! ‚°–½ QSÿŸãI¼‡1fÒ^5íCğØø!P á´Ó% ‚°–½ QSÿŸãI¼‡1fÒ^5íCğØø!P á´Óş @Mi
