@@ -56,10 +56,10 @@
                             <ul class="top-header-right clear-fix">
                                 <li>
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.facebook.com/edifycons"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://twitter.com/edifycons"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.instagram.com/edifycons/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/edifycons-pvt-ltd"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#">Call Us +91 9986798748</a></li>
@@ -98,7 +98,7 @@
                                     <a href="#" class="footre-logo footerManualclass"><img src="{{ URL::asset('assets/images/frontend/Them-logo/logoedify2.png')}}" alt="logo"></a>
                                     <p>Lorem ipsum dolor  amet natum latine cosa at quo, suas labore saperet  there any quote for write lore latineu suasa sample lorem dummy text.</p>
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.facebook.com/edifycons"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
