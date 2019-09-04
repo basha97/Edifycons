@@ -93,32 +93,33 @@
                 <div class="footer-section">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-3 col-xs-6 footer-item">
+                            <div class="col-md-4 col-xs-6 footer-item">
                                 <div class="footer-item-one">
                                     <a href="#" class="footre-logo footerManualclass"><img src="{{ URL::asset('assets/images/frontend/Them-logo/logoedify2.png')}}" alt="logo"></a>
-                                    <p>Lorem ipsum dolor  amet natum latine cosa at quo, suas labore saperet  there any quote for write lore latineu suasa sample lorem dummy text.</p>
+                                    <p>EDIFYCONS IS THE BIG DATA AND CLOUD COMPUTING FOCUSED SPIN-OFF OF THE IT CONSULTANCY COMPANY CEDIANT. WE HELP OUR
+                                    CUSTOMERS TO STAY AFLOAT IN A COMPETITIVE MARKET WHERE THE KEY IS EFFICIENTLY CONVERTING DATA INTO KNOWLEDGE.</p>
                                     <ul>
                                         <li><a href="https://www.facebook.com/edifycons"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://twitter.com/edifycons"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.instagram.com/edifycons/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/edifycons-pvt-ltd"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-xs-6 footer-item">
+                            <div class="col-md-4 col-xs-6 footer-item">
                                 <div class="footer-item-two">
                                     <h3>Our Services</h3>
                                     <ul>
                                         <li><i class="fa fa-angle-right" aria-hidden="true"></i><a href="#">Business Consulting</a></li>
-                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i><a href="#">Business Performance</a></li>
-                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i><a href="#">Strategic Marketing Process</a></li>
+                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i><a href="#">Corporate Training</a></li>
+                                        <li><i class="fa fa-angle-right" aria-hidden="true"></i><a href="#">Placement</a></li>
                                         <li><i class="fa fa-angle-right" aria-hidden="true"></i><a href="#">Leadership & Personal<br>Development</a></li>
                                         <li><i class="fa fa-angle-right" aria-hidden="true"></i><a href="#">Marketing Consulting</a></li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="col-md-3 col-xs-6 footer-item">
+                            {{-- <div class="col-md-3 col-xs-6 footer-item">
                                 <div class="footer-item-three">
                                     <h3>Latest News</h3>
                                     <ul>
@@ -136,13 +137,14 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
-                            <div class="col-md-3 col-xs-6 footer-item">
+                            </div> --}}
+                            <div class="col-md-4 col-xs-6 footer-item">
                                 <div class="footer-item-four">
                                     <h3>Our Address</h3>
-                                    <span>Vermont Street, Manchester Township, NJ</span>
-                                    <span>(741) 800-2117</span>
-                                    <span>example@example.com</span>
+                                    <span>No : 210 , 2nd Floor, Nostalgia Complex</span>
+                                    <span>Robertson Rd, Pulikeshi Nagar , Bengaluru</span>
+                                    <span>(+91) 9986798748</span>
+                                    <span>notify@edifycons.com</span>
                                 </div>
                             </div>
                         </div>
@@ -151,7 +153,7 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <p>Copyright <a href="#">Codex</a> @ 2019</p>
+                                    <p>Copyright <a href="#">Edifycons</a> @ 2019</p>
                                 </div>
                                 <div class="col-xs-6">
                                     <div class="clear-fix">
