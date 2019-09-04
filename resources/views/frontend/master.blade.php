@@ -96,8 +96,8 @@
                             <div class="col-md-4 col-xs-6 footer-item">
                                 <div class="footer-item-one">
                                     <a href="#" class="footre-logo footerManualclass"><img src="{{ URL::asset('assets/images/frontend/Them-logo/logoedify2.png')}}" alt="logo"></a>
-                                    <p>EDIFYCONS IS THE BIG DATA AND CLOUD COMPUTING FOCUSED SPIN-OFF OF THE IT CONSULTANCY COMPANY CEDIANT. WE HELP OUR
-                                    CUSTOMERS TO STAY AFLOAT IN A COMPETITIVE MARKET WHERE THE KEY IS EFFICIENTLY CONVERTING DATA INTO KNOWLEDGE.</p>
+                                    <p>Edifycons is the BIG DATA and CLOUD COMPUTING focuse spin-off of the IT consultancy company cediant. We help our
+                                    customers to stay afloat in a competitive market where the key is efficiently converting data into knowledge.</p>
                                     <ul>
                                         <li><a href="https://www.facebook.com/edifycons"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                         <li><a href="https://twitter.com/edifycons"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
